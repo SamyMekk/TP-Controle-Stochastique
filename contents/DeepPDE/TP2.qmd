@@ -1,4 +1,4 @@
 # Enoncé du TP n°2 
 
-[Télécharger le notebook pour le premier TP n°1](../ProjetXVA.ipynb)
+[Télécharger le notebook pour le premier TP n°1](ProjetXVA.ipynb)
 

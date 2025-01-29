@@ -31,6 +31,17 @@
     ]
   },
   {
+    "objectID": "contents/DeepPDE/TP2.html",
+    "href": "contents/DeepPDE/TP2.html",
+    "title": "4  Enoncé du TP n°2",
+    "section": "",
+    "text": "Télécharger le notebook pour le premier TP n°1",
+    "crumbs": [
+      "DeepPDE",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Enoncé du TP n°2</span>"
+    ]
+  },
+  {
     "objectID": "contents/GenerativeIA/GenAI.html",
     "href": "contents/GenerativeIA/GenAI.html",
     "title": "5  Rappels de cours : Schrodinger Bridge",
@@ -71,17 +82,6 @@
     "text": "Reinforcement Learning :\n\n[3] Y. Jia and X.Y. Zhou: Policy gradient and Actor-Critic learning in continuous time and space: theory and algorithms, 2022, Journal of Machine Learning and Research.\n[4] Y. Jia and X.Y. Zhou: q-Learning in continuous time, 2023, Journal of Machine Learning and Research.\n[6] R. Sutton and A. Barto: Introduction to reinforcement learning, second edition 2016,\n\n\n\nDeep PDE\n\n[1] M. Germain, H. Pham, X. Warin: Neural networks-based algorithms for stochastic control and PDEs in finance, Machine Learning and Data Sciences for Financial Markets: a guide to contemporary practices, Cambridge University Press, 2023, Editors: A. Capponi and C. A. Lehalle\n\n\n\nGenerative IA :\n\n[2] M. Hamdouche, P. Henry-Labordère, H. Pham: Generative modeling for time series via Schrödinger bridge, 2023.\n[5] C. Remlinger, J. Mikael, R. Elie: Conditional loss and deep Euler scheme for time series generation, 2021, AAAI Conference on Artificial Intelligence.\n[7] M. Xia, X. Li, Q. Shen, T. Chou: Squared Wasserstein-2 distance for efficient reconstruction of stochastic differential equations, 2024, arXiv:2401.11354",
     "crumbs": [
       "References"
-    ]
-  },
-  {
-    "objectID": "contents/DeepPDE/TP2.html",
-    "href": "contents/DeepPDE/TP2.html",
-    "title": "4  Enoncé du TP n°2",
-    "section": "",
-    "text": "Télécharger le notebook pour le premier TP n°1",
-    "crumbs": [
-      "DeepPDE",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Enoncé du TP n°2</span>"
     ]
   }
 ]
