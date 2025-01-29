@@ -9,7 +9,6 @@ book:
   author: "Samy Mekkaoui"
   date: today
   repo-url: "https://github.com/SamyMekk/TP-Controle-Stochastique"
-  downloads: pdf
   chapters:
      - index.qmd
 
@@ -44,13 +43,7 @@ format:
     toc: true
     sidebar: true 
 
-  pdf:
-    documentclass: scrreport
-    fontsize: "10"
-    margin-left: 2cm
-    margin-right: 2cm
-    margin-bottom: 3cm
-    margin-top: 2cm
+ 
   
 bibliography : references.bib
 nocite: |

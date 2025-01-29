@@ -1,5 +1,25 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "TP : Apprentissage automatique et contrôle stochastique",
+    "section": "",
+    "text": "Organisation\nSite en cours de construction pour le TP du cours d’Apprentissage automatique et contrôle stochastique enseigné par Huyên Pham au Master 2 Probabilités et Finance.",
+    "crumbs": [
+      "Organisation"
+    ]
+  },
+  {
+    "objectID": "index.html#utiliser-ce-site",
+    "href": "index.html#utiliser-ce-site",
+    "title": "TP : Apprentissage automatique et contrôle stochastique",
+    "section": "Utiliser ce site",
+    "text": "Utiliser ce site",
+    "crumbs": [
+      "Organisation"
+    ]
+  },
+  {
     "objectID": "contents/DeepPDE/DeepPDE.html",
     "href": "contents/DeepPDE/DeepPDE.html",
     "title": "3  Rappels de cours : Deep PDE",
