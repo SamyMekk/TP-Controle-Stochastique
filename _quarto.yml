@@ -1,0 +1,58 @@
+project:
+  type: book
+
+lang: fr
+
+
+book:
+  title: "TP : Apprentissage automatique et contrôle stochastique"
+  author: "Samy Mekkaoui"
+  date: today
+  repo-url: "https://github.com/SamyMekk/TP-Controle-Stochastique"
+  downloads: pdf
+  chapters:
+     - index.qmd
+
+     - part: "RL"
+       chapters:
+         - contents/RL/RLContinuousTime.qmd
+         - contents/RL/TP1.qmd
+     - part: "DeepPDE"
+       chapters:
+         - contents/DeepPDE/DeepPDE.qmd
+         - contents/DeepPDE/TP2.qmd
+     - part: "Generative IA"
+       chapters:
+         - contents/GenerativeIA/GenAI.qmd
+         - contents/GenerativeIA/TP3.qmd
+ 
+     - references.qmd
+
+    
+     
+
+  sidebar:
+    style: docked
+
+format:
+  html:
+    mainfont: "Computer Modern Serif"
+    theme:
+      light: simplex
+      dark: solar
+    css: styles.css
+    toc: true
+    sidebar: true 
+
+  pdf:
+    documentclass: scrreport
+    fontsize: "10"
+    margin-left: 2cm
+    margin-right: 2cm
+    margin-bottom: 3cm
+    margin-top: 2cm
+  
+bibliography : references.bib
+nocite: |
+  @*
+

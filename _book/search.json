@@ -1,0 +1,56 @@
+[
+  {
+    "objectID": "contents/DeepPDE/DeepPDE.html",
+    "href": "contents/DeepPDE/DeepPDE.html",
+    "title": "3  Rappels de cours : Deep PDE",
+    "section": "",
+    "text": "import numpy as np np.arange(5)",
+    "crumbs": [
+      "DeepPDE",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Rappels de cours : Deep PDE</span>"
+    ]
+  },
+  {
+    "objectID": "contents/GenerativeIA/GenAI.html",
+    "href": "contents/GenerativeIA/GenAI.html",
+    "title": "5  Rappels de cours : Schrodinger Bridge",
+    "section": "",
+    "text": "5.1 Rappels de cours",
+    "crumbs": [
+      "Generative IA",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Rappels de cours : Schrodinger Bridge</span>"
+    ]
+  },
+  {
+    "objectID": "contents/GenerativeIA/GenAI.html#rappels-de-cours",
+    "href": "contents/GenerativeIA/GenAI.html#rappels-de-cours",
+    "title": "5  Rappels de cours : Schrodinger Bridge",
+    "section": "",
+    "text": "Définition 5.1 (intervalle de confiance) Un intervalle de confiance de niveau \\(1-\\alpha\\) est un intervalle \\(I = [A,B]\\) dont les bornes \\(A,B\\) sont des statistiques, et tel que pour tout \\(\\theta\\), \\[P_\\theta(\\theta \\in I) \\geqslant 1 - \\alpha.\\] Un intervalle de confiance de niveau asymptotique \\(1-\\alpha\\) est une suite d’intervalles \\(I_n = [A_n,B_n]\\) dont les bornes \\(A_n,B_n\\) sont des statistiques, et tels que pour tout \\(n\\), \\[ P_\\theta(\\theta \\in I_n) \\geqslant 1 - \\alpha.\\]",
+    "crumbs": [
+      "Generative IA",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Rappels de cours : Schrodinger Bridge</span>"
+    ]
+  },
+  {
+    "objectID": "contents/GenerativeIA/GenAI.html#implémentation-numérique",
+    "href": "contents/GenerativeIA/GenAI.html#implémentation-numérique",
+    "title": "5  Rappels de cours : Schrodinger Bridge",
+    "section": "5.2 Implémentation numérique",
+    "text": "5.2 Implémentation numérique\n\n\n\nÀ gauche, RQ élevé mais biais nul ; à droite, RQ faible mais biais non nul.",
+    "crumbs": [
+      "Generative IA",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Rappels de cours : Schrodinger Bridge</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Reinforcement Learning :\n\n[3] Y. Jia and X.Y. Zhou: Policy gradient and Actor-Critic learning in continuous time and space: theory and algorithms, 2022, Journal of Machine Learning and Research.\n[4] Y. Jia and X.Y. Zhou: q-Learning in continuous time, 2023, Journal of Machine Learning and Research.\n[6] R. Sutton and A. Barto: Introduction to reinforcement learning, second edition 2016,\n\n\n\nDeep PDE\n\n[1] M. Germain, H. Pham, X. Warin: Neural networks-based algorithms for stochastic control and PDEs in finance, Machine Learning and Data Sciences for Financial Markets: a guide to contemporary practices, Cambridge University Press, 2023, Editors: A. Capponi and C. A. Lehalle\n\n\n\nGenerative IA :\n\n[2] M. Hamdouche, P. Henry-Labordère, H. Pham: Generative modeling for time series via Schrödinger bridge, 2023.\n[5] C. Remlinger, J. Mikael, R. Elie: Conditional loss and deep Euler scheme for time series generation, 2021, AAAI Conference on Artificial Intelligence.\n[7] M. Xia, X. Li, Q. Shen, T. Chou: Squared Wasserstein-2 distance for efficient reconstruction of stochastic differential equations, 2024, arXiv:2401.11354",
+    "crumbs": [
+      "References"
+    ]
+  }
+]

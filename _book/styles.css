@@ -1,0 +1,54 @@
+body {
+    font-size: 18px; /* Ajustez cette valeur selon vos besoins */
+  }
+  
+  .book-title {
+    font-size: 24px; /* Ajustez cette valeur */
+  }
+
+
+  h1{
+    text-align: center;
+  }
+
+  .theorem {
+    background-color: rgb(248, 239, 239);
+    padding: 0.5em;
+  }
+
+  .lemma {
+    background-color: rgb(247, 247, 242);
+    padding: 0.5em;
+}
+
+.definition {
+    background-color: rgb(238, 245, 242);
+    padding: 0.5em;
+  }
+
+  .theorem .definition p {
+    background-color: rgb(119, 37, 37);
+    margin-top: 1em;
+  }
+
+  
+@media (max-width: 600px) {
+    .content {
+      margin: 2em 0;
+      width: calc(100vw - 2rem); /* Viewport width minus padding */
+      text-align: justify;
+      overflow-x: hidden;
+      padding: 0 1rem;
+      box-sizing: border-box;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .content .math, 
+    .content .math-display {
+      width: auto;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }

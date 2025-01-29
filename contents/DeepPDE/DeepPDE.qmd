@@ -1,0 +1,6 @@
+# Rappels de cours : Deep PDE 
+
+
+```{python}
+import numpy as np
+np.arange(5)

@@ -1,0 +1,28 @@
+# References {.unnumbered}
+
+::: {#refs}
+:::
+
+
+### Reinforcement Learning : {.unnumbered}
+
+
+- [3] Y. Jia and X.Y. Zhou: Policy gradient and Actor-Critic learning in continuous time and space: theory and algorithms, 2022, Journal of Machine Learning and Research.
+
+- [4] Y. Jia and X.Y. Zhou: q-Learning in continuous time, 2023, Journal of Machine Learning and Research.
+
+- [6] R. Sutton and A. Barto: Introduction to reinforcement learning, second edition 2016,
+
+### Deep PDE {.unnumbered}
+
+- [1] M. Germain, H. Pham, X. Warin: Neural networks-based algorithms for stochastic control and PDEs in finance, Machine Learning and Data Sciences for Financial Markets: a guide to contemporary practices, Cambridge University Press, 2023, Editors: A. Capponi and C. A. Lehalle
+
+
+### Generative IA :  {.unnumbered}
+
+
+- [2] M. Hamdouche, P. Henry-Labordère, H. Pham: Generative modeling for time series via Schrödinger bridge, 2023.
+
+- [5] C. Remlinger, J. Mikael, R. Elie: Conditional loss and deep Euler scheme for time series generation, 2021, AAAI Conference on Artificial Intelligence.
+
+- [7] M. Xia, X. Li, Q. Shen, T. Chou: Squared Wasserstein-2 distance for efficient reconstruction of stochastic differential equations, 2024, arXiv:2401.11354
