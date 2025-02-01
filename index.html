@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./contents/RL/RLContinuousTime.html" rel="next">
+<link href="./contents/RL/Rappels.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,8 +71,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="utils/styles.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -122,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">RL</span></a>
+ <span class="menu-text">Part n°1 : Reinforcement Learning</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -130,8 +159,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./contents/RL/RLContinuousTime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rappels de cours : RL Temps Continu</span></span></a>
+  <a href="./contents/RL/Rappels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Reminders</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -145,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">DeepPDE</span></a>
+ <span class="menu-text">Part n°2 : DeepPDE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -154,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./contents/DeepPDE/DeepPDE.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Rappels de cours : Deep PDE</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Course Reminders</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -168,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Generative IA</span></a>
+ <span class="menu-text">Part n°3 : Generative IA</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -177,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./contents/GenerativeIA/GenAI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Rappels de cours : Schrodinger Bridge</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Course Reminders</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -211,6 +240,25 @@ ul.task-list li input[type="checkbox"] {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+<div style="display:&nbsp;none;"><p style="display: none;">
+
+$$
+
+\newcommand{\bx}{\boldsymbol{x}}
+
+\newcommand{\bt}{\boldsymbol{\theta}}
+
+\newcommand{\dkl}{\mathrm{d}_{\mathrm{KL}}}
+
+\newcommand{\dtv}{\mathrm{d}_{\mathrm{TV}}}
+
+\newcommand{\emv}{\hat{\theta}_{\mathrm{emv}}}
+
+\newcommand{\ent}{\mathrm{Ent}}
+
+$$
+
+</p></div>
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -231,7 +279,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Date de publication</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">29 janvier 2025</p>
+      <p class="date">1 février 2025</p>
     </div>
   </div>
   
@@ -246,11 +294,23 @@ ul.task-list li input[type="checkbox"] {
 <section id="organisation" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="organisation">Organisation</h2>
 <hr>
-<p>Site en cours de construction pour le TP du cours d’Apprentissage automatique et contrôle stochastique enseigné par Huyên Pham au Master 2 Probabilités et Finance.</p>
+<p>Bienvenue sur la page du TP du cours d’<strong>Apprentissage automatique et contrôle stochastique</strong> enseigné par Huyên Pham au sein du M2 Probabilités et Finance. <br> Les TPs seront décomposés en 3 TPs de 3h chacun où chacune des notions abordée pendant le cours sera illustré.</p>
+<p><strong>Cette page est en cours de construction .</strong></p>
+<ul>
+<li><p><strong>Horaires</strong> : Les TPs auront lieu les <span class="math inline">\(\ldots\)</span> en salle <strong>123</strong></p></li>
+<li><p><strong>Agenda</strong> :</p>
+<ul>
+<li>TP n°1 : About <strong>Reinforcement Learning</strong></li>
+<li>TP n°2 : About <strong>Deep Galerkin</strong> and <strong>Deep BSDE Solver</strong> for solving PDEs</li>
+<li>TP n°3 : About <strong>Generative IA</strong> and <strong>Schrodinger Bridge</strong> for data generation.</li>
+</ul></li>
+</ul>
 <hr>
 </section>
 <section id="utiliser-ce-site" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="utiliser-ce-site">Utiliser ce site</h2>
+<p>Ce site est décomposé en 3 parties qui constituent le cours où un chapitre intitulé <strong>Course Reminders</strong> est présenté où les principaux résultats théoriques sont présentés ainsi qu’un second chapitre qui contient l’énoncé du TP ainsi qu’un lien vers un fichier jupyter notebook.</p>
+<p>Par ailleurs, ce site est généré via <a href="https://quarto.org">Quarto</a> et les notes sont accessibles depuis cette page <a href="https://github.com/SamyMekk/TP-Controle-Stochastique">GitHub</a>. Si jamais vous détectez des erreurs sur le site, n’hésitez pas à me les faire remonter via des pull requests.</p>
 
 
 </section>
@@ -824,8 +884,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./contents/RL/RLContinuousTime.html" class="pagination-link" aria-label="Rappels de cours : RL Temps Continu">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rappels de cours : RL Temps Continu</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./contents/RL/Rappels.html" class="pagination-link" aria-label="Course Reminders">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Reminders</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
