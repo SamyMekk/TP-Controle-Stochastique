@@ -1,2 +1,0 @@
-# Rappels de cours : RL Temps Continu
-

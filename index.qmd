@@ -2,9 +2,25 @@
 
 ---
 
-Site en cours de construction pour le TP du cours d'Apprentissage automatique et contrôle stochastique enseigné par Huyên Pham au Master 2 Probabilités et Finance.
+Bienvenue sur la page du TP du cours d'**Apprentissage automatique et contrôle stochastique** enseigné par Huyên Pham au sein du M2 Probabilités et Finance. <br>
+Les TPs seront décomposés en 3 TPs de 3h chacun où chacune des notions abordée pendant le cours sera illustré.
+
+**Cette page est en cours de construction .** 
+
+
+- **Horaires** : Les TPs auront lieu les $\ldots$ en salle **123** 
+ 
+- **Agenda** : 
+  - TP n°1 : About **Reinforcement Learning**
+  - TP n°2 : About **Deep Galerkin** and **Deep BSDE Solver** for solving PDEs
+  - TP n°3 : About **Generative IA** and **Schrodinger Bridge** for data generation.
 
 ---
 
 
 ## Utiliser ce site {.unnumbered}
+
+Ce site est décomposé en 3 parties qui constituent le cours où un chapitre intitulé **Course Reminders** est présenté où les principaux résultats théoriques sont présentés ainsi qu'un second chapitre qui contient l'énoncé du TP ainsi qu'un lien vers un fichier jupyter notebook.
+
+
+Par ailleurs, ce site est généré via [Quarto](https://quarto.org) et les notes sont accessibles depuis cette page [GitHub](https://github.com/SamyMekk/TP-Controle-Stochastique). Si jamais vous détectez des erreurs sur le site, n'hésitez pas à me les faire remonter via des pull requests.

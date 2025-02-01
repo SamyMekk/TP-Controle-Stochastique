@@ -90,7 +90,7 @@ div.csl-indent {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="utils/styles.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -118,8 +118,9 @@ div.csl-indent {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">TP : Apprentissage automatique et contrôle stochastique</a> 
-        <div class="sidebar-tools-main">
+        <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/SamyMekk/TP-Controle-Stochastique" title="Code source" class="quarto-navigation-tool px-1" aria-label="Code source"><i class="bi bi-github"></i></a>
+    <a href="./TP---Apprentissage-automatique-et-contrôle-stochastique.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
 </div>
     </div>
@@ -140,7 +141,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">RL</span></a>
+ <span class="menu-text">Part n°1 : Reinforcement Learning</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -148,8 +149,8 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./contents/RL/RLContinuousTime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Rappels de cours : RL Temps Continu</span></span></a>
+  <a href="./contents/RL/Rappels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Reminders</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -163,7 +164,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">DeepPDE</span></a>
+ <span class="menu-text">Part n°2 : DeepPDE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -172,7 +173,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./contents/DeepPDE/DeepPDE.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Rappels de cours : Deep PDE</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Course Reminders</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -186,7 +187,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Generative IA</span></a>
+ <span class="menu-text">Part n°3 : Generative IA</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -195,7 +196,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./contents/GenerativeIA/GenAI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Rappels de cours : Schrodinger Bridge</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Course Reminders</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -223,13 +224,32 @@ div.csl-indent {
    
   <ul>
   <li><a href="#reinforcement-learning" id="toc-reinforcement-learning" class="nav-link active" data-scroll-target="#reinforcement-learning">Reinforcement Learning :</a></li>
-  <li><a href="#deep-pde" id="toc-deep-pde" class="nav-link" data-scroll-target="#deep-pde">Deep PDE</a></li>
+  <li><a href="#deep-pde" id="toc-deep-pde" class="nav-link" data-scroll-target="#deep-pde">Deep PDE :</a></li>
   <li><a href="#generative-ia" id="toc-generative-ia" class="nav-link" data-scroll-target="#generative-ia">Generative IA :</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+<div style="display:&nbsp;none;"><p style="display: none;">
+
+$$
+
+\newcommand{\bx}{\boldsymbol{x}}
+
+\newcommand{\bt}{\boldsymbol{\theta}}
+
+\newcommand{\dkl}{\mathrm{d}_{\mathrm{KL}}}
+
+\newcommand{\dtv}{\mathrm{d}_{\mathrm{TV}}}
+
+\newcommand{\emv}{\hat{\theta}_{\mathrm{emv}}}
+
+\newcommand{\ent}{\mathrm{Ent}}
+
+$$
+
+</p></div>
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -261,9 +281,11 @@ div.csl-indent {
 </ul>
 </section>
 <section id="deep-pde" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="deep-pde">Deep PDE</h3>
+<h3 class="unnumbered anchored" data-anchor-id="deep-pde">Deep PDE :</h3>
 <ul>
-<li>[1] M. Germain, H. Pham, X. Warin: Neural networks-based algorithms for stochastic control and PDEs in finance, Machine Learning and Data Sciences for Financial Markets: a guide to contemporary practices, Cambridge University Press, 2023, Editors: A. Capponi and C. A. Lehalle</li>
+<li><p>TBD</p></li>
+<li><p>TBD</p></li>
+<li><p>[1] M. Germain, H. Pham, X. Warin: Neural networks-based algorithms for stochastic control and PDEs in finance, Machine Learning and Data Sciences for Financial Markets: a guide to contemporary practices, Cambridge University Press, 2023, Editors: A. Capponi and C. A. Lehalle</p></li>
 </ul>
 </section>
 <section id="generative-ia" class="level3 unnumbered">

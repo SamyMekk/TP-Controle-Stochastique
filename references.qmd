@@ -13,7 +13,11 @@
 
 - [6] R. Sutton and A. Barto: Introduction to reinforcement learning, second edition 2016,
 
-### Deep PDE {.unnumbered}
+### Deep PDE :  {.unnumbered}
+
+- TBD
+  
+- TBD
 
 - [1] M. Germain, H. Pham, X. Warin: Neural networks-based algorithms for stochastic control and PDEs in finance, Machine Learning and Data Sciences for Financial Markets: a guide to contemporary practices, Cambridge University Press, 2023, Editors: A. Capponi and C. A. Lehalle
 

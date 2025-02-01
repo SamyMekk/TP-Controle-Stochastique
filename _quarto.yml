@@ -9,18 +9,19 @@ book:
   author: "Samy Mekkaoui"
   date: today
   repo-url: "https://github.com/SamyMekk/TP-Controle-Stochastique"
+  downloads: pdf
   chapters:
      - index.qmd
 
-     - part: "RL"
+     - part: "Part n°1  : Reinforcement Learning"
        chapters:
-         - contents/RL/RLContinuousTime.qmd
+         - contents/RL/Rappels.qmd 
          - contents/RL/TP1.qmd
-     - part: "DeepPDE"
+     - part: "Part n°2 : DeepPDE"
        chapters:
          - contents/DeepPDE/DeepPDE.qmd
          - contents/DeepPDE/TP2.qmd
-     - part: "Generative IA"
+     - part: "Part n°3 : Generative IA"
        chapters:
          - contents/GenerativeIA/GenAI.qmd
          - contents/GenerativeIA/TP3.qmd
@@ -39,9 +40,21 @@ format:
     theme:
       light: simplex
       dark: solar
-    css: styles.css
+    css: utils/styles.css
+    include-before-body:
+      - utils/macros
     toc: true
     sidebar: true 
+  
+  pdf:
+    documentclass: scrreport
+    fontsize: "10"
+    margin-left: 2cm
+    margin-right: 2cm
+    margin-bottom: 3cm
+    margin-top: 2cm
+    include-in-header:
+      - utils/macros.tex
 
  
   

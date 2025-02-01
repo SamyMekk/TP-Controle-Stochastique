@@ -1,0 +1,10 @@
+<div style="display: none;"><p style="display: none;">
+$$
+\newcommand{\bx}{\boldsymbol{x}}
+\newcommand{\bt}{\boldsymbol{\theta}}
+\newcommand{\dkl}{\mathrm{d}_{\mathrm{KL}}}
+\newcommand{\dtv}{\mathrm{d}_{\mathrm{TV}}}
+\newcommand{\emv}{\hat{\theta}_{\mathrm{emv}}}
+\newcommand{\ent}{\mathrm{Ent}}
+$$
+</p></div>

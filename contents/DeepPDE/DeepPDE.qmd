@@ -1,4 +1,4 @@
-# Rappels de cours : Deep PDE 
+# Course Reminders
 
 
 ```{python}

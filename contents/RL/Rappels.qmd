@@ -1,0 +1,94 @@
+# Course Reminders
+
+
+
+## Some Foundations of Reinforcement Learning
+
+### Markov Decision Processes
+
+
+:::{#def-MDP}
+
+## MDP
+
+Un intervalle de confiance de niveau $1-\alpha$ est un intervalle $I = [A,B]$ dont les bornes $A,B$ sont des statistiques, et tel que pour tout $\theta$, 
+$$P_\theta(\theta \in I) \geqslant 1 - \alpha.$$
+Un intervalle de confiance de niveau asymptotique $1-\alpha$ est une *suite* d'intervalles $I_n = [A_n,B_n]$ dont les bornes $A_n,B_n$ sont des statistiques, et tels que pour tout $n$,
+$$ P_\theta(\theta \in I_n) \geqslant 1 - \alpha.$$
+:::
+
+
+:::{#thm-biaisvar}
+
+
+
+## Décomposition biais-variance
+Le risque quadratique $\mathbb{E}_{\theta} [|\hat{\theta}-\theta|^2]$ est égal à 
+$$
+\underbrace{\operatorname{Var}_{\theta} (\hat{\theta})}_{\text{variance}} +
+\underbrace{\mathbb{E}_{\theta}[\hat{\theta}-\theta]^2}_{\text{carré du biais}} \, .
+$$
+:::
+
+
+:::{.proof}
+En notant $x$ l'espérance de $\hat{\theta}$, on voit que le risque quadratique est égal à $\mathbb{E}[|\hat{\theta} - x - (\theta - x)|^2]$. Le carré se développe en trois termes : le premier, $\mathbb{E}[|\hat{\theta} - x|^2]$, est la variance de $\hat{\theta}$. Le second, $-2\mathbb{E}[(\hat{\theta} - x)(\theta - x)]$, est égal à $-2(\theta - x)\mathbb{E}[\hat{\theta} - x]$, c'est-à-dire 0. Le dernier, $\mathbb{E}[(\theta - x)^2]$, est égal à $(\theta - x)^2$, c'est-à-dire $(\theta - \mathbb{E}[\hat{\theta}])^2$ : c'est bien le carré du biais. 
+:::
+
+
+![À gauche, RQ élevé mais biais nul ; à droite, RQ faible mais biais non nul. ](/images/cover.png){width=50%}
+
+:::{#exm-testadeq}
+
+On peut se demander si, dans la langue courante, les 21 lettres de l'alphabet ont à peu près la même probabilité d'apparaître comme première lettre d'un mot. Cela revient à tester si $\bp_0=(1/26, \dotsc, 1/26)$, hypothèse qui est évidemment fausse, il suffit de regarder l'épaisseur des 26 sections du dictionnaire pour s'en rendre compte. 
+
+Qu'en est-il des 9 chiffres ? On peut vouloir tester si, dans n'importe quel document (journal, site internet, article scientifique), ces 9 chiffres apparaissent à peu près uniformément en tant que premier chiffre d'un nombre. Cela reviendrait à tester $\bp_0 = (1/9, \dotsc, 1/9)$. 
+
+Ce n'est pas le cas et cette hypothèse est très fréquemment réfutée : le premier chiffre significatif d'un nombre est bien plus souvent 1 ($\approx 30\%$ des cas) que $9$ ($\approx 5\%$ cas). Ce phénomène s'appelle [*loi de Benford*](https://fr.wikipedia.org/wiki/Loi_de_Benford). 
+
+:::
+
+### Value-based methods
+
+### Policy-based methods
+
+
+### TBD 
+
+
+### 
+
+
+
+## Reinforcement Learning in Continous Time
+
+
+### Problem Formulation
+
+
+
+### Policy gradient methods in continous time
+
+
+#### Policy Gradient Representation
+
+Let's dive into policy gradient representation now.
+
+
+#### Actor critic algorithms
+
+Let's dive into Actor critic algorithms
+
+### Q-learning and approximations in continous time
+
+#### TBD
+
+
+#### TBD 
+
+
+## To Go Further
+
+If you are interested in such topics, you can have a look at the following papers as this is a current research topic.
+
+

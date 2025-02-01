@@ -4,7 +4,17 @@
     "href": "index.html",
     "title": "TP : Apprentissage automatique et contrôle stochastique",
     "section": "",
-    "text": "Organisation\nSite en cours de construction pour le TP du cours d’Apprentissage automatique et contrôle stochastique enseigné par Huyên Pham au Master 2 Probabilités et Finance.",
+    "text": "Organisation\nBienvenue sur la page du TP du cours d’Apprentissage automatique et contrôle stochastique enseigné par Huyên Pham au sein du M2 Probabilités et Finance.  Les TPs seront décomposés en 3 TPs de 3h chacun où chacune des notions abordée pendant le cours sera illustré.\nCette page est en cours de construction .",
+    "crumbs": [
+      "Organisation"
+    ]
+  },
+  {
+    "objectID": "index.html#organisation",
+    "href": "index.html#organisation",
+    "title": "TP : Apprentissage automatique et contrôle stochastique",
+    "section": "",
+    "text": "Horaires : Les TPs auront lieu les \\(\\ldots\\) en salle 123\nAgenda :\n\nTP n°1 : About Reinforcement Learning\nTP n°2 : About Deep Galerkin and Deep BSDE Solver for solving PDEs\nTP n°3 : About Generative IA and Schrodinger Bridge for data generation.",
     "crumbs": [
       "Organisation"
     ]
@@ -14,20 +24,75 @@
     "href": "index.html#utiliser-ce-site",
     "title": "TP : Apprentissage automatique et contrôle stochastique",
     "section": "Utiliser ce site",
-    "text": "Utiliser ce site",
+    "text": "Utiliser ce site\nCe site est décomposé en 3 parties qui constituent le cours où un chapitre intitulé Course Reminders est présenté où les principaux résultats théoriques sont présentés ainsi qu’un second chapitre qui contient l’énoncé du TP ainsi qu’un lien vers un fichier jupyter notebook.\nPar ailleurs, ce site est généré via Quarto et les notes sont accessibles depuis cette page GitHub. Si jamais vous détectez des erreurs sur le site, n’hésitez pas à me les faire remonter via des pull requests.",
     "crumbs": [
       "Organisation"
     ]
   },
   {
+    "objectID": "contents/RL/Rappels.html",
+    "href": "contents/RL/Rappels.html",
+    "title": "1  Course Reminders",
+    "section": "",
+    "text": "1.1 Some Foundations of Reinforcement Learning",
+    "crumbs": [
+      "Part n°1  : Reinforcement Learning",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Reminders</span>"
+    ]
+  },
+  {
+    "objectID": "contents/RL/Rappels.html#some-foundations-of-reinforcement-learning",
+    "href": "contents/RL/Rappels.html#some-foundations-of-reinforcement-learning",
+    "title": "1  Course Reminders",
+    "section": "",
+    "text": "1.1.1 Markov Decision Processes\n\nDéfinition 1.1 (MDP) Un intervalle de confiance de niveau \\(1-\\alpha\\) est un intervalle \\(I = [A,B]\\) dont les bornes \\(A,B\\) sont des statistiques, et tel que pour tout \\(\\theta\\), \\[P_\\theta(\\theta \\in I) \\geqslant 1 - \\alpha.\\] Un intervalle de confiance de niveau asymptotique \\(1-\\alpha\\) est une suite d’intervalles \\(I_n = [A_n,B_n]\\) dont les bornes \\(A_n,B_n\\) sont des statistiques, et tels que pour tout \\(n\\), \\[ P_\\theta(\\theta \\in I_n) \\geqslant 1 - \\alpha.\\]\n\n\nThéorème 1.1 (Décomposition biais-variance) Le risque quadratique \\(\\mathbb{E}_{\\theta} [|\\hat{\\theta}-\\theta|^2]\\) est égal à \\[\n\\underbrace{\\operatorname{Var}_{\\theta} (\\hat{\\theta})}_{\\text{variance}} +\n\\underbrace{\\mathbb{E}_{\\theta}[\\hat{\\theta}-\\theta]^2}_{\\text{carré du biais}} \\, .\n\\]\n\n\nPreuve. En notant \\(x\\) l’espérance de \\(\\hat{\\theta}\\), on voit que le risque quadratique est égal à \\(\\mathbb{E}[|\\hat{\\theta} - x - (\\theta - x)|^2]\\). Le carré se développe en trois termes : le premier, \\(\\mathbb{E}[|\\hat{\\theta} - x|^2]\\), est la variance de \\(\\hat{\\theta}\\). Le second, \\(-2\\mathbb{E}[(\\hat{\\theta} - x)(\\theta - x)]\\), est égal à \\(-2(\\theta - x)\\mathbb{E}[\\hat{\\theta} - x]\\), c’est-à-dire 0. Le dernier, \\(\\mathbb{E}[(\\theta - x)^2]\\), est égal à \\((\\theta - x)^2\\), c’est-à-dire \\((\\theta - \\mathbb{E}[\\hat{\\theta}])^2\\) : c’est bien le carré du biais.\n\n\n\n\nÀ gauche, RQ élevé mais biais nul ; à droite, RQ faible mais biais non nul.\n\n\n\nExemple 1.1 On peut se demander si, dans la langue courante, les 21 lettres de l’alphabet ont à peu près la même probabilité d’apparaître comme première lettre d’un mot. Cela revient à tester si \\(\\bp_0=(1/26, \\dotsc, 1/26)\\), hypothèse qui est évidemment fausse, il suffit de regarder l’épaisseur des 26 sections du dictionnaire pour s’en rendre compte.\nQu’en est-il des 9 chiffres ? On peut vouloir tester si, dans n’importe quel document (journal, site internet, article scientifique), ces 9 chiffres apparaissent à peu près uniformément en tant que premier chiffre d’un nombre. Cela reviendrait à tester \\(\\bp_0 = (1/9, \\dotsc, 1/9)\\).\nCe n’est pas le cas et cette hypothèse est très fréquemment réfutée : le premier chiffre significatif d’un nombre est bien plus souvent 1 (\\(\\approx 30\\%\\) des cas) que \\(9\\) (\\(\\approx 5\\%\\) cas). Ce phénomène s’appelle loi de Benford.\n\n\n\n1.1.2 Value-based methods\n\n\n1.1.3 Policy-based methods\n\n\n1.1.4 TBD\n\n\n1.1.5",
+    "crumbs": [
+      "Part n°1  : Reinforcement Learning",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Reminders</span>"
+    ]
+  },
+  {
+    "objectID": "contents/RL/Rappels.html#reinforcement-learning-in-continous-time",
+    "href": "contents/RL/Rappels.html#reinforcement-learning-in-continous-time",
+    "title": "1  Course Reminders",
+    "section": "1.2 Reinforcement Learning in Continous Time",
+    "text": "1.2 Reinforcement Learning in Continous Time\n\n1.2.1 Problem Formulation\n\n\n1.2.2 Policy gradient methods in continous time\n\n1.2.2.1 Policy Gradient Representation\nLet’s dive into policy gradient representation now.\n\n\n1.2.2.2 Actor critic algorithms\nLet’s dive into Actor critic algorithms\n\n\n\n1.2.3 Q-learning and approximations in continous time\n\n1.2.3.1 TBD\n\n\n1.2.3.2 TBD",
+    "crumbs": [
+      "Part n°1  : Reinforcement Learning",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Reminders</span>"
+    ]
+  },
+  {
+    "objectID": "contents/RL/Rappels.html#to-go-further",
+    "href": "contents/RL/Rappels.html#to-go-further",
+    "title": "1  Course Reminders",
+    "section": "1.3 To Go Further",
+    "text": "1.3 To Go Further\nIf you are interested in such topics, you can have a look at the following papers as this is a current research topic.",
+    "crumbs": [
+      "Part n°1  : Reinforcement Learning",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Reminders</span>"
+    ]
+  },
+  {
+    "objectID": "contents/RL/TP1.html",
+    "href": "contents/RL/TP1.html",
+    "title": "2  Enoncé du TP n°1",
+    "section": "",
+    "text": "$$\n\n\\newcommand{\\bx}{\\boldsymbol{x}}\n\n\\newcommand{\\bt}{\\boldsymbol{\\theta}}\n\n\\newcommand{\\dkl}{\\mathrm{d}_{\\mathrm{KL}}}\n\n\\newcommand{\\dtv}{\\mathrm{d}_{\\mathrm{TV}}}\n\n\\newcommand{\\emv}{\\hat{\\theta}_{\\mathrm{emv}}}\n\n\\newcommand{\\ent}{\\mathrm{Ent}}\n\n$$",
+    "crumbs": [
+      "Part n°1  : Reinforcement Learning",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Enoncé du TP n°1</span>"
+    ]
+  },
+  {
     "objectID": "contents/DeepPDE/DeepPDE.html",
     "href": "contents/DeepPDE/DeepPDE.html",
-    "title": "3  Rappels de cours : Deep PDE",
+    "title": "3  Course Reminders",
     "section": "",
-    "text": "import numpy as np np.arange(5)",
+    "text": "$$\n\n\\newcommand{\\bx}{\\boldsymbol{x}}\n\n\\newcommand{\\bt}{\\boldsymbol{\\theta}}\n\n\\newcommand{\\dkl}{\\mathrm{d}_{\\mathrm{KL}}}\n\n\\newcommand{\\dtv}{\\mathrm{d}_{\\mathrm{TV}}}\n\n\\newcommand{\\emv}{\\hat{\\theta}_{\\mathrm{emv}}}\n\n\\newcommand{\\ent}{\\mathrm{Ent}}\n\n$$\n\n\n\n\n\n\nimport numpy as np np.arange(5)",
     "crumbs": [
-      "DeepPDE",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Rappels de cours : Deep PDE</span>"
+      "Part n°2 : DeepPDE",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Course Reminders</span>"
     ]
   },
   {
@@ -35,43 +100,54 @@
     "href": "contents/DeepPDE/TP2.html",
     "title": "4  Enoncé du TP n°2",
     "section": "",
-    "text": "Télécharger le notebook pour le TP n°2",
+    "text": "$$\n\n\\newcommand{\\bx}{\\boldsymbol{x}}\n\n\\newcommand{\\bt}{\\boldsymbol{\\theta}}\n\n\\newcommand{\\dkl}{\\mathrm{d}_{\\mathrm{KL}}}\n\n\\newcommand{\\dtv}{\\mathrm{d}_{\\mathrm{TV}}}\n\n\\newcommand{\\emv}{\\hat{\\theta}_{\\mathrm{emv}}}\n\n\\newcommand{\\ent}{\\mathrm{Ent}}\n\n$$\n\n\n\n\n\n\nTélécharger le notebook pour le TP n°2",
     "crumbs": [
-      "DeepPDE",
+      "Part n°2 : DeepPDE",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Enoncé du TP n°2</span>"
     ]
   },
   {
     "objectID": "contents/GenerativeIA/GenAI.html",
     "href": "contents/GenerativeIA/GenAI.html",
-    "title": "5  Rappels de cours : Schrodinger Bridge",
+    "title": "5  Course Reminders",
     "section": "",
     "text": "5.1 Rappels de cours",
     "crumbs": [
-      "Generative IA",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Rappels de cours : Schrodinger Bridge</span>"
+      "Part n°3 : Generative IA",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Course Reminders</span>"
     ]
   },
   {
     "objectID": "contents/GenerativeIA/GenAI.html#rappels-de-cours",
     "href": "contents/GenerativeIA/GenAI.html#rappels-de-cours",
-    "title": "5  Rappels de cours : Schrodinger Bridge",
+    "title": "5  Course Reminders",
     "section": "",
     "text": "Définition 5.1 (intervalle de confiance) Un intervalle de confiance de niveau \\(1-\\alpha\\) est un intervalle \\(I = [A,B]\\) dont les bornes \\(A,B\\) sont des statistiques, et tel que pour tout \\(\\theta\\), \\[P_\\theta(\\theta \\in I) \\geqslant 1 - \\alpha.\\] Un intervalle de confiance de niveau asymptotique \\(1-\\alpha\\) est une suite d’intervalles \\(I_n = [A_n,B_n]\\) dont les bornes \\(A_n,B_n\\) sont des statistiques, et tels que pour tout \\(n\\), \\[ P_\\theta(\\theta \\in I_n) \\geqslant 1 - \\alpha.\\]",
     "crumbs": [
-      "Generative IA",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Rappels de cours : Schrodinger Bridge</span>"
+      "Part n°3 : Generative IA",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Course Reminders</span>"
     ]
   },
   {
     "objectID": "contents/GenerativeIA/GenAI.html#implémentation-numérique",
     "href": "contents/GenerativeIA/GenAI.html#implémentation-numérique",
-    "title": "5  Rappels de cours : Schrodinger Bridge",
+    "title": "5  Course Reminders",
     "section": "5.2 Implémentation numérique",
-    "text": "5.2 Implémentation numérique\n\n\n\nÀ gauche, RQ élevé mais biais nul ; à droite, RQ faible mais biais non nul.",
+    "text": "5.2 Implémentation numérique\n\\(\\bx\\)\n\n\n\nÀ gauche, RQ élevé mais biais nul ; à droite, RQ faible mais biais non nul.",
     "crumbs": [
-      "Generative IA",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Rappels de cours : Schrodinger Bridge</span>"
+      "Part n°3 : Generative IA",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Course Reminders</span>"
+    ]
+  },
+  {
+    "objectID": "contents/GenerativeIA/TP3.html",
+    "href": "contents/GenerativeIA/TP3.html",
+    "title": "6  Enoncé du TP n°3",
+    "section": "",
+    "text": "$$\n\n\\newcommand{\\bx}{\\boldsymbol{x}}\n\n\\newcommand{\\bt}{\\boldsymbol{\\theta}}\n\n\\newcommand{\\dkl}{\\mathrm{d}_{\\mathrm{KL}}}\n\n\\newcommand{\\dtv}{\\mathrm{d}_{\\mathrm{TV}}}\n\n\\newcommand{\\emv}{\\hat{\\theta}_{\\mathrm{emv}}}\n\n\\newcommand{\\ent}{\\mathrm{Ent}}\n\n$$",
+    "crumbs": [
+      "Part n°3 : Generative IA",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Enoncé du TP n°3</span>"
     ]
   },
   {
@@ -79,7 +155,7 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Reinforcement Learning :\n\n[3] Y. Jia and X.Y. Zhou: Policy gradient and Actor-Critic learning in continuous time and space: theory and algorithms, 2022, Journal of Machine Learning and Research.\n[4] Y. Jia and X.Y. Zhou: q-Learning in continuous time, 2023, Journal of Machine Learning and Research.\n[6] R. Sutton and A. Barto: Introduction to reinforcement learning, second edition 2016,\n\n\n\nDeep PDE\n\n[1] M. Germain, H. Pham, X. Warin: Neural networks-based algorithms for stochastic control and PDEs in finance, Machine Learning and Data Sciences for Financial Markets: a guide to contemporary practices, Cambridge University Press, 2023, Editors: A. Capponi and C. A. Lehalle\n\n\n\nGenerative IA :\n\n[2] M. Hamdouche, P. Henry-Labordère, H. Pham: Generative modeling for time series via Schrödinger bridge, 2023.\n[5] C. Remlinger, J. Mikael, R. Elie: Conditional loss and deep Euler scheme for time series generation, 2021, AAAI Conference on Artificial Intelligence.\n[7] M. Xia, X. Li, Q. Shen, T. Chou: Squared Wasserstein-2 distance for efficient reconstruction of stochastic differential equations, 2024, arXiv:2401.11354",
+    "text": "$$\n\n\\newcommand{\\bx}{\\boldsymbol{x}}\n\n\\newcommand{\\bt}{\\boldsymbol{\\theta}}\n\n\\newcommand{\\dkl}{\\mathrm{d}_{\\mathrm{KL}}}\n\n\\newcommand{\\dtv}{\\mathrm{d}_{\\mathrm{TV}}}\n\n\\newcommand{\\emv}{\\hat{\\theta}_{\\mathrm{emv}}}\n\n\\newcommand{\\ent}{\\mathrm{Ent}}\n\n$$\n\n\n\n\n\n\n\n\n\nReinforcement Learning :\n\n[3] Y. Jia and X.Y. Zhou: Policy gradient and Actor-Critic learning in continuous time and space: theory and algorithms, 2022, Journal of Machine Learning and Research.\n[4] Y. Jia and X.Y. Zhou: q-Learning in continuous time, 2023, Journal of Machine Learning and Research.\n[6] R. Sutton and A. Barto: Introduction to reinforcement learning, second edition 2016,\n\n\n\nDeep PDE :\n\nTBD\nTBD\n[1] M. Germain, H. Pham, X. Warin: Neural networks-based algorithms for stochastic control and PDEs in finance, Machine Learning and Data Sciences for Financial Markets: a guide to contemporary practices, Cambridge University Press, 2023, Editors: A. Capponi and C. A. Lehalle\n\n\n\nGenerative IA :\n\n[2] M. Hamdouche, P. Henry-Labordère, H. Pham: Generative modeling for time series via Schrödinger bridge, 2023.\n[5] C. Remlinger, J. Mikael, R. Elie: Conditional loss and deep Euler scheme for time series generation, 2021, AAAI Conference on Artificial Intelligence.\n[7] M. Xia, X. Li, Q. Shen, T. Chou: Squared Wasserstein-2 distance for efficient reconstruction of stochastic differential equations, 2024, arXiv:2401.11354",
     "crumbs": [
       "References"
     ]

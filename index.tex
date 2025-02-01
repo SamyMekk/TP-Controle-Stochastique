@@ -129,6 +129,13 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bt}{\boldsymbol{\theta}}
+\newcommand{\dkl}{\mathrm{d}_{\mathrm{KL}}}
+\newcommand{\dtv}{\mathrm{d}_{\mathrm{TV}}}
+\newcommand{\emv}{\hat{\theta}_{\mathrm{emv}}}
+\newcommand{\ent}{\mathrm{Ent}}
+\usepackage{mathrsfs}
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
@@ -170,6 +177,10 @@
 \usepackage{amsthm}
 \theoremstyle{definition}
 \newtheorem{definition}{Définition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Exemple}[chapter]
+\theoremstyle{plain}
+\newtheorem{theorem}{Théorème}[chapter]
 \theoremstyle{remark}
 \AtBeginDocument{\renewcommand*{\proofname}{Preuve}}
 \newtheorem*{remark}{Remarque}
@@ -211,7 +222,7 @@
 
 \title{TP : Apprentissage automatique et contrôle stochastique}
 \author{Samy Mekkaoui}
-\date{2025-01-29}
+\date{2025-02-01}
 
 \begin{document}
 \maketitle
@@ -232,9 +243,32 @@
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-Site en cours de construction pour le TP du cours d'Apprentissage
-automatique et contrôle stochastique enseigné par Huyên Pham au Master 2
-Probabilités et Finance.
+Bienvenue sur la page du TP du cours d'\textbf{Apprentissage automatique
+et contrôle stochastique} enseigné par Huyên Pham au sein du M2
+Probabilités et Finance. Les TPs seront décomposés en 3 TPs de 3h chacun
+où chacune des notions abordée pendant le cours sera illustré.
+
+\textbf{Cette page est en cours de construction .}
+
+\begin{itemize}
+\item
+  \textbf{Horaires} : Les TPs auront lieu les \(\ldots\) en salle
+  \textbf{123}
+\item
+  \textbf{Agenda} :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    TP n°1 : About \textbf{Reinforcement Learning}
+  \item
+    TP n°2 : About \textbf{Deep Galerkin} and \textbf{Deep BSDE Solver}
+    for solving PDEs
+  \item
+    TP n°3 : About \textbf{Generative IA} and \textbf{Schrodinger
+    Bridge} for data generation.
+  \end{itemize}
+\end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -243,25 +277,150 @@ Probabilités et Finance.
 
 \markright{Utiliser ce site}
 
-\part{RL}
+Ce site est décomposé en 3 parties qui constituent le cours où un
+chapitre intitulé \textbf{Course Reminders} est présenté où les
+principaux résultats théoriques sont présentés ainsi qu'un second
+chapitre qui contient l'énoncé du TP ainsi qu'un lien vers un fichier
+jupyter notebook.
 
-\chapter{Rappels de cours : RL Temps
-Continu}\label{rappels-de-cours-rl-temps-continu}
+Par ailleurs, ce site est généré via \href{https://quarto.org}{Quarto}
+et les notes sont accessibles depuis cette page
+\href{https://github.com/SamyMekk/TP-Controle-Stochastique}{GitHub}. Si
+jamais vous détectez des erreurs sur le site, n'hésitez pas à me les
+faire remonter via des pull requests.
+
+\part{Part n°1 : Reinforcement Learning}
+
+\chapter{Course Reminders}\label{course-reminders}
+
+\section{Some Foundations of Reinforcement
+Learning}\label{some-foundations-of-reinforcement-learning}
+
+\subsection{Markov Decision Processes}\label{markov-decision-processes}
+
+\begin{definition}[MDP]\protect\hypertarget{def-MDP}{}\label{def-MDP}
+
+Un intervalle de confiance de niveau \(1-\alpha\) est un intervalle
+\(I = [A,B]\) dont les bornes \(A,B\) sont des statistiques, et tel que
+pour tout \(\theta\), \[P_\theta(\theta \in I) \geqslant 1 - \alpha.\]
+Un intervalle de confiance de niveau asymptotique \(1-\alpha\) est une
+\emph{suite} d'intervalles \(I_n = [A_n,B_n]\) dont les bornes
+\(A_n,B_n\) sont des statistiques, et tels que pour tout \(n\),
+\[ P_\theta(\theta \in I_n) \geqslant 1 - \alpha.\]
+
+\end{definition}
+
+\begin{theorem}[Décomposition
+biais-variance]\protect\hypertarget{thm-biaisvar}{}\label{thm-biaisvar}
+
+Le risque quadratique \(\mathbb{E}_{\theta} [|\hat{\theta}-\theta|^2]\)
+est égal à \[
+\underbrace{\operatorname{Var}_{\theta} (\hat{\theta})}_{\text{variance}} +
+\underbrace{\mathbb{E}_{\theta}[\hat{\theta}-\theta]^2}_{\text{carré du biais}} \, .
+\]
+
+\end{theorem}
+
+\begin{proof}
+En notant \(x\) l'espérance de \(\hat{\theta}\), on voit que le risque
+quadratique est égal à
+\(\mathbb{E}[|\hat{\theta} - x - (\theta - x)|^2]\). Le carré se
+développe en trois termes :~le premier,
+\(\mathbb{E}[|\hat{\theta} - x|^2]\), est la variance de
+\(\hat{\theta}\). Le second,
+\(-2\mathbb{E}[(\hat{\theta} - x)(\theta - x)]\), est égal à
+\(-2(\theta - x)\mathbb{E}[\hat{\theta} - x]\), c'est-à-dire 0. Le
+dernier, \(\mathbb{E}[(\theta - x)^2]\), est égal à \((\theta - x)^2\),
+c'est-à-dire \((\theta - \mathbb{E}[\hat{\theta}])^2\) :~c'est bien le
+carré du biais.
+\end{proof}
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{images/cover.png}
+
+}
+
+\caption{À~gauche, RQ élevé mais biais nul ;~à droite, RQ faible mais
+biais non nul.}
+
+\end{figure}%
+
+\begin{example}[]\protect\hypertarget{exm-testadeq}{}\label{exm-testadeq}
+
+On peut se demander si, dans la langue courante, les 21 lettres de
+l'alphabet ont à peu près la même probabilité d'apparaître comme
+première lettre d'un mot. Cela revient à tester si
+\(\bp_0=(1/26, \dotsc, 1/26)\), hypothèse qui est évidemment fausse, il
+suffit de regarder l'épaisseur des 26 sections du dictionnaire pour s'en
+rendre compte.
+
+Qu'en est-il des 9 chiffres ? On peut vouloir tester si, dans n'importe
+quel document (journal, site internet, article scientifique), ces 9
+chiffres apparaissent à peu près uniformément en tant que premier
+chiffre d'un nombre. Cela reviendrait à tester
+\(\bp_0 = (1/9, \dotsc, 1/9)\).
+
+Ce n'est pas le cas et cette hypothèse est très fréquemment réfutée : le
+premier chiffre significatif d'un nombre est bien plus souvent 1
+(\(\approx 30\%\) des cas) que \(9\) (\(\approx 5\%\) cas). Ce phénomène
+s'appelle \href{https://fr.wikipedia.org/wiki/Loi_de_Benford}{\emph{loi
+de Benford}}.
+
+\end{example}
+
+\subsection{Value-based methods}\label{value-based-methods}
+
+\subsection{Policy-based methods}\label{policy-based-methods}
+
+\subsection{TBD}\label{tbd}
+
+\subsection{}\label{section}
+
+\section{Reinforcement Learning in Continous
+Time}\label{reinforcement-learning-in-continous-time}
+
+\subsection{Problem Formulation}\label{problem-formulation}
+
+\subsection{Policy gradient methods in continous
+time}\label{policy-gradient-methods-in-continous-time}
+
+\subsubsection{Policy Gradient
+Representation}\label{policy-gradient-representation}
+
+Let's dive into policy gradient representation now.
+
+\subsubsection{Actor critic algorithms}\label{actor-critic-algorithms}
+
+Let's dive into Actor critic algorithms
+
+\subsection{Q-learning and approximations in continous
+time}\label{q-learning-and-approximations-in-continous-time}
+
+\subsubsection{TBD}\label{tbd-1}
+
+\subsubsection{TBD}\label{tbd-2}
+
+\section{To Go Further}\label{to-go-further}
+
+If you are interested in such topics, you can have a look at the
+following papers as this is a current research topic.
 
 \chapter{Enoncé du TP n°1}\label{enoncuxe9-du-tp-n1}
 
-\part{DeepPDE}
+\part{Part n°2 : DeepPDE}
 
-\chapter{Rappels de cours : Deep PDE}\label{rappels-de-cours-deep-pde}
+\chapter{Course Reminders}\label{course-reminders-1}
 
 import numpy as np np.arange(5)
 
 \chapter{Enoncé du TP n°2}\label{enoncuxe9-du-tp-n2}
 
-\part{Generative IA}
+\href{ProjetXVA.ipynb}{Télécharger le notebook pour le TP n°2}
 
-\chapter{Rappels de cours : Schrodinger
-Bridge}\label{rappels-de-cours-schrodinger-bridge}
+\part{Part n°3 : Generative IA}
+
+\chapter{Course Reminders}\label{course-reminders-2}
 
 \section{Rappels de cours}\label{rappels-de-cours}
 
@@ -320,11 +479,14 @@ biais non nul.}
   learning, second edition 2016,
 \end{itemize}
 
-\subsection*{Deep PDE}\label{deep-pde}
-\addcontentsline{toc}{subsection}{Deep PDE}
+\subsection*{Deep PDE :}\label{deep-pde}
+\addcontentsline{toc}{subsection}{Deep PDE :}
 
 \begin{itemize}
-\tightlist
+\item
+  TBD
+\item
+  TBD
 \item
   {[}1{]} M. Germain, H. Pham, X. Warin: Neural networks-based
   algorithms for stochastic control and PDEs in finance, Machine
@@ -333,7 +495,7 @@ biais non nul.}
   Capponi and C. A. Lehalle
 \end{itemize}
 
-\subsection*{Generative IA :}\label{generative-ia-1}
+\subsection*{Generative IA :}\label{generative-ia}
 \addcontentsline{toc}{subsection}{Generative IA :}
 
 \begin{itemize}
