@@ -236,6 +236,9 @@ window.Quarto = {
   <li><a href="#some-foundations-of-reinforcement-learning" id="toc-some-foundations-of-reinforcement-learning" class="nav-link active" data-scroll-target="#some-foundations-of-reinforcement-learning"><span class="header-section-number">1.1</span> Some Foundations of Reinforcement Learning</a>
   <ul class="collapse">
   <li><a href="#markov-decision-processes" id="toc-markov-decision-processes" class="nav-link" data-scroll-target="#markov-decision-processes"><span class="header-section-number">1.1.1</span> Markov Decision Processes</a></li>
+  </ul></li>
+  <li><a href="#mdp" id="toc-mdp" class="nav-link" data-scroll-target="#mdp"><span class="header-section-number">1.2</span> MDP</a>
+  <ul class="collapse">
   <li><a href="#value-based-methods" id="toc-value-based-methods" class="nav-link" data-scroll-target="#value-based-methods"><span class="header-section-number">1.2.1</span> Value-based methods</a></li>
   <li><a href="#policy-based-methods" id="toc-policy-based-methods" class="nav-link" data-scroll-target="#policy-based-methods"><span class="header-section-number">1.2.2</span> Policy-based methods</a></li>
   <li><a href="#tbd" id="toc-tbd" class="nav-link" data-scroll-target="#tbd"><span class="header-section-number">1.2.3</span> TBD</a></li>
@@ -295,14 +298,15 @@ $$
 <section id="some-foundations-of-reinforcement-learning" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="some-foundations-of-reinforcement-learning"><span class="header-section-number">1.1</span> Some Foundations of Reinforcement Learning</h2>
 <section id="markov-decision-processes" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored"><span class="header-section-number">1.1.1</span> Markov Decision Processes</h3>
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="markov-decision-processes"><span class="header-section-number">1.1.1</span> Markov Decision Processes</h3>
 <div id="def-MDP" class="theorem definition">
 <p><span class="theorem-title"><strong>Définition 1.1</strong></span> Test</p>
+</div>
+</section>
+</section>
 <section id="mdp" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="mdp"><span class="header-section-number">1.2</span> MDP</h2>
-<p>Un intervalle de confiance de niveau <span class="math inline">\(1-\alpha\)</span> est un intervalle <span class="math inline">\(I = [A,B]\)</span> dont les bornes <span class="math inline">\(A,B\)</span> sont des statistiques, et tel que pour tout <span class="math inline">\(\theta\)</span>, <span class="math display">\[P_\theta(\theta \in I) \geqslant 1 - \alpha.\]</span> Un intervalle de confiance de niveau asymptotique <span class="math inline">\(1-\alpha\)</span> est une <em>suite</em> d’intervalles <span class="math inline">\(I_n = [A_n,B_n]\)</span> dont les bornes <span class="math inline">\(A_n,B_n\)</span> sont des statistiques, et tels que pour tout <span class="math inline">\(n\)</span>, <span class="math display">\[ P_\theta(\theta \in I_n) \geqslant 1 - \alpha.\]</span></p>
-</section>
-</div>
+<p>Un intervalle de confiance de niveau <span class="math inline">\(1-\alpha\)</span> est un intervalle <span class="math inline">\(I = [A,B]\)</span> dont les bornes <span class="math inline">\(A,B\)</span> sont des statistiques, et tel que pour tout <span class="math inline">\(\theta\)</span>, <span class="math display">\[P_\theta(\theta \in I) \geqslant 1 - \alpha.\]</span> Un intervalle de confiance de niveau asymptotique <span class="math inline">\(1-\alpha\)</span> est une <em>suite</em> d’intervalles <span class="math inline">\(I_n = [A_n,B_n]\)</span> dont les bornes <span class="math inline">\(A_n,B_n\)</span> sont des statistiques, et tels que pour tout <span class="math inline">\(n\)</span>, <span class="math display">\[ P_\theta(\theta \in I_n) \geqslant 1 - \alpha.\]</span> :::</p>
 <div id="thm-biaisvar" class="theorem">
 <p><span class="theorem-title"><strong>Théorème 1.1 (Décomposition biais-variance)</strong></span> Le risque quadratique <span class="math inline">\(\mathbb{E}_{\theta} [|\hat{\theta}-\theta|^2]\)</span> est égal à <span class="math display">\[
 \underbrace{\operatorname{Var}_{\theta} (\hat{\theta})}_{\text{variance}} +
@@ -323,7 +327,6 @@ $$
 <p>Qu’en est-il des 9 chiffres ? On peut vouloir tester si, dans n’importe quel document (journal, site internet, article scientifique), ces 9 chiffres apparaissent à peu près uniformément en tant que premier chiffre d’un nombre. Cela reviendrait à tester.</p>
 <p>Ce n’est pas le cas et cette hypothèse est très fréquemment réfutée : le premier chiffre significatif d’un nombre est bien plus souvent 1 (<span class="math inline">\(\approx 30\%\)</span> des cas) que <span class="math inline">\(9\)</span> (<span class="math inline">\(\approx 5\%\)</span> cas). Ce phénomène s’appelle <a href="https://fr.wikipedia.org/wiki/Loi_de_Benford"><em>loi de Benford</em></a>.</p>
 </div>
-</section>
 <section id="value-based-methods" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="value-based-methods"><span class="header-section-number">1.2.1</span> Value-based methods</h3>
 </section>
