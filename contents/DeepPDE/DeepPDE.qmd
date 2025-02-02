@@ -3,7 +3,11 @@
 
 ```{python}
 
-# Import des Librairies
+#| output-location: column-fragment
+
+
+
+#  Import des Librairies
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -26,4 +30,8 @@ plt.grid()
 
 ```
 
+:::{#def-quarto}
+
 A noter qu'il faut être à l'aise sur l'utilisation de Quarto
+
+:::

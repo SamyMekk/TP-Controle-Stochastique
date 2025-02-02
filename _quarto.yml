@@ -52,4 +52,5 @@ nocite: |
 
 execute:
   kernel: "Python appstatapp_tp2"
+  echo : true
 
