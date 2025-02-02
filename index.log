@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.1)  1 FEB 2025 23:45
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.1)  2 FEB 2025 00:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -592,9 +592,9 @@ Package: amsthm 2020/05/29 v2.20.6
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 )
 Class scrreprt Info: amsthm's \deferred@thm@head patched.
-\c@definition=\count333
-\c@example=\count334
-\c@theorem=\count335
+\c@theorem=\count333
+\c@definition=\count334
+\c@example=\count335
 \c@refremark=\count336
 \c@refsolution=\count337
 (c:/Users/samym/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty
@@ -1028,16 +1028,76 @@ File: images/cover.png Graphic file (type bmp)
 [5
 
 ]
-! Undefined control sequence.
-l.354 \(\bp
-           _0=(1/26, \dotsc, 1/26)\), hypothèse qui est évidemment fausse, il 
+
+[6]
+
+[7]
+chapter 2.
+
+
+[8
+
+]
+part II.
+Package scrkbase Info: You've told me to use the font selection of the element
+(scrkbase)             `partprefix' that is an alias of element `partnumber'
+(scrkbase)              on input line 409.
+
+
+[9
+
+]
+chapter 3.
+
+
+[10
+
+]
+chapter 4.
+
+
+[11
+
+]
+part III.
+Package scrkbase Info: You've told me to use the font selection of the element
+(scrkbase)             `partprefix' that is an alias of element `partnumber'
+(scrkbase)              on input line 419.
+
+
+[12
+
+]
+chapter 5.
+File: images/cover.png Graphic file (type bmp)
+<images/cover.png>
+
+
+[13
+
+]
+chapter 6.
+
+
+[14
+
+]
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.464 \end{CSLReferences}
+                          
 Here is how much of TeX's memory you used:
- 25554 strings out of 475785
- 495733 string characters out of 5771066
+ 25598 strings out of 475785
+ 496841 string characters out of 5771066
  1225206 words of memory out of 5000000
- 48170 multiletter control sequences out of 15000+600000
- 566290 words of font info for 96 fonts, out of 8000000 for 9000
+ 48209 multiletter control sequences out of 15000+600000
+ 566306 words of font info for 98 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  122i,7n,121p,10910b,484s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on index.pdf (5 pages).
+Output written on index.pdf (14 pages).

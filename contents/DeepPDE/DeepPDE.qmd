@@ -2,5 +2,25 @@
 
 
 ```{python}
+
+# Import des Librairies
+
 import numpy as np
-np.arange(5)
+import matplotlib.pyplot as plt
+
+
+# Test
+print(np.arange(5))
+
+
+def f(x) :
+    return x**2
+
+L=[1,2,3,4,5]
+
+plt.scatter(L,[f(l) for l in L])
+
+
+```
+
+A noter qu'il faut être à l'aise sur l'utilisation de Quarto

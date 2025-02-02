@@ -175,12 +175,12 @@
 \floatname{codelisting}{Listing}
 \newcommand*\listoflistings{\listof{codelisting}{Liste des Listings}}
 \usepackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{theorem}{Théorème}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}{Définition}[chapter]
 \theoremstyle{definition}
 \newtheorem{example}{Exemple}[chapter]
-\theoremstyle{plain}
-\newtheorem{theorem}{Théorème}[chapter]
 \theoremstyle{remark}
 \AtBeginDocument{\renewcommand*{\proofname}{Preuve}}
 \newtheorem*{remark}{Remarque}
@@ -222,7 +222,7 @@
 
 \title{TP : Apprentissage automatique et contrôle stochastique}
 \author{Samy Mekkaoui}
-\date{2025-02-01}
+\date{2025-02-02}
 
 \begin{document}
 \maketitle
@@ -350,16 +350,14 @@ biais non nul.}
 
 On peut se demander si, dans la langue courante, les 21 lettres de
 l'alphabet ont à peu près la même probabilité d'apparaître comme
-première lettre d'un mot. Cela revient à tester si
-\(\bp_0=(1/26, \dotsc, 1/26)\), hypothèse qui est évidemment fausse, il
-suffit de regarder l'épaisseur des 26 sections du dictionnaire pour s'en
-rendre compte.
+première lettre d'un mot. Cela revient à tester si , hypothèse qui est
+évidemment fausse, il suffit de regarder l'épaisseur des 26 sections du
+dictionnaire pour s'en rendre compte.
 
 Qu'en est-il des 9 chiffres ? On peut vouloir tester si, dans n'importe
 quel document (journal, site internet, article scientifique), ces 9
 chiffres apparaissent à peu près uniformément en tant que premier
-chiffre d'un nombre. Cela reviendrait à tester
-\(\bp_0 = (1/9, \dotsc, 1/9)\).
+chiffre d'un nombre. Cela reviendrait à tester.
 
 Ce n'est pas le cas et cette hypothèse est très fréquemment réfutée : le
 premier chiffre significatif d'un nombre est bien plus souvent 1

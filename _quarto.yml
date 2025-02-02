@@ -20,6 +20,7 @@ book:
        chapters:
          - contents/DeepPDE/DeepPDE.qmd
          - contents/DeepPDE/TP2.qmd
+         - contents/DeepPDE/ProjetXVA.ipynb
      - part: "Part n°3 : Generative IA"
        chapters:
          - contents/GenerativeIA/GenAI.qmd
@@ -44,10 +45,12 @@ format:
       - utils/macros
     toc: true
     sidebar: true 
-
  
   
 bibliography : references.bib
 nocite: |
   @*
+
+execute:
+  kernel: "Python appstatapp_tp2"
 
