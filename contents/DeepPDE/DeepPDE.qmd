@@ -20,7 +20,7 @@ print(np.arange(5))
 def f(x) :
     return x**2
 
-L=[1,2,3,4,5]
+L=[i for i in range(-5,6)]
 
 plt.scatter(L,[f(l) for l in L])
 plt.xlabel("Test")
