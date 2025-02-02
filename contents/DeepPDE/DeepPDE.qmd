@@ -19,7 +19,10 @@ def f(x) :
 L=[1,2,3,4,5]
 
 plt.scatter(L,[f(l) for l in L])
-
+plt.xlabel("Test")
+plt.ylabel("Test2")
+plt.title("Test Scatter Plot")
+plt.grid()
 
 ```
 

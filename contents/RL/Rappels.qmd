@@ -9,6 +9,8 @@
 
 :::{#def-MDP}
 
+Test
+
 ## MDP
 
 Un intervalle de confiance de niveau $1-\alpha$ est un intervalle $I = [A,B]$ dont les bornes $A,B$ sont des statistiques, et tel que pour tout $\theta$, 
