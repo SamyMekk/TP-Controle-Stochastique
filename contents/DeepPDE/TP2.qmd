@@ -1,4 +1,0 @@
-# Enoncé du TP n°2 
-
-[Télécharger le notebook pour le TP n°2](ProjetXVA.ipynb)
-

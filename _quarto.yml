@@ -12,15 +12,15 @@ book:
   chapters:
      - index.qmd
 
-     - part: "Part n°1  : Reinforcement Learning"
-       chapters:
-         - contents/RL/RappelsRL.qmd 
-         - contents/RL/TP1.qmd
-     - part: "Part n°2 : DeepPDE"
+     - part: "Part n°1 : Deep Learning for PDEs"
        chapters:
          - contents/DeepPDE/RappelsDeepPDE.qmd
-         - contents/DeepPDE/TP2.qmd
-     - part: "Part n°3 : Generative IA"
+         - contents/DeepPDE/TP1.qmd
+      - part: "Part n°2  : Reinforcement Learning"
+       chapters:
+         - contents/RL/RappelsRL.qmd 
+         - contents/RL/TP2.qmd
+     - part: "Part n°3 : Generative AI"
        chapters:
          - contents/GenerativeIA/RappelsGenAI.qmd
          - contents/GenerativeIA/TP3.qmd
