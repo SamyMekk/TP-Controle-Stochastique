@@ -1,0 +1,84 @@
+# Course Reminders
+
+
+## Some reminders on PDEs and stochastic control
+
+
+
+
+## Neural Network Algorithms 
+
+
+### Deep Galerkin Method
+
+This method is based on the seminal papers :  Insérer Références.
+
+
+
+Insérer Graphiques
+
+### Deep BSDE 
+
+
+
+Insérer Graphiques
+
+
+
+### Deep BDP
+
+This method is based on the seminal papers : Insérer Références
+
+
+
+
+
+
+
+
+
+##
+```{python}
+
+#| output-location: column-fragment
+
+
+
+#  Import des Librairies
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Test
+print(np.arange(5))
+
+
+def f(x) :
+    return x**2
+
+L=[i for i in range(-5,6)]
+
+plt.scatter(L,[f(l) for l in L])
+plt.xlabel("Test")
+plt.ylabel("Test2")
+plt.title("Test Scatter Plot")
+plt.grid()
+
+# Exemple simple de DataFrame
+data = {
+    'Nom': ['Alice', 'Bob', 'Charlie', 'David'],
+    'Âge': [24, 30, 18, 22],
+    'Ville': ['Paris', 'Lyon', 'Marseille', 'Toulouse'],
+    'Score': [85.5, 90.0, 78.0, 88.5]
+}
+
+df = pd.DataFrame(data)
+df
+```
+
+:::{#def-quarto}
+
+A noter qu'il faut être à l'aise sur l'utilisation de Quarto
+
+:::

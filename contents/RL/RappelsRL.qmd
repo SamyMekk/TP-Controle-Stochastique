@@ -1,0 +1,203 @@
+# Course Reminders
+
+
+
+## Some Foundations of Reinforcement Learning
+
+We will introduce in the following the main concepts of Reinforcement Learning. If you want to look for more in depth theory, you can look at 
+
+### Basics of Reinforcement Learning
+
+
+:::{#def-MDP}
+
+A Markov Decision Process is a quadruplet given by $(\mathcal{X},\mathcal{A},P,r=(f,g))$ such that :
+
+- $\mathcal{X}$ denotes the space of states on which the discrete time state process $(X_t)_{t \in \mathbb{N}}$
+- $\mathcal{A}$ denotes the space of actions in which the control $(\alpha_t)_{t \in \mathbb{N}}$ is defined 
+- State dynamics given by :
+$$X_{t+1} \sim P_t(X_t,\alpha_t)$$
+with a probability transition given by an application $(t,x,a) \in \mathbb{N} \times \mathcal{X} \times \mathcal{A} \mapsto P_t(x,a,dx') \in \mathcal{P}(\mathcal{X})$.
+- Reward given by a couple $(f,g)$ such that :
+   - $f(x,a)$ is a running reward obtained in state $x$ when choosing the action $a$
+   - Terminal reward $g(x)$ 
+   - Discount factor $\beta \in [0,1]$
+:::
+
+Now, that we have defined the main components of a reinforcement learning problem, we can define the notion of policy 
+
+:::{#def-Policy}
+
+A policy $\pi=(\pi_t)_{t \in \mathbb{N}^{*}}$ is a sequence of actions choosen in a markovian setting with respect to the state variable. A policy $\pi$ can be either :
+
+- deterministic when $\pi_t : \mathcal{X} \mapsto \mathcal{A}$
+- randomized when $\pi_t : \mathcal{X} : \mapsto \mathcal{P}(\mathcal{A})$ meaning that $\pi_t$ is a probability distribution of choosing an action at time $t$ in state $x$.
+ 
+We will say that a control $\alpha = (\alpha_t)_{t \in \mathbb{N}}$ is drawn from a policy $\pi$ if for each $t \in \mathbb{N}$, we have :
+
+- $\alpha_t =\pi_t(X_t)$ in the case of deterministic policies
+- $\alpha_t \sim \pi_t(X_t)$ in the case of randomized policies.
+:::
+The goal of Reinforcement Learning will be to learn the control $\alpha$ with maximises the sum of rewards which will be defined in the value function.
+
+:::{#def-valuefunction}
+
+Given a policy $\pi=(\pi_t)_{t \in \mathbb{N}}$ and an horizon $T \in \mathbb{N}$, we define :
+
+- The state value function is defined as : 
+$$\begin{align}
+V_t^{\pi}(x) = \mathbb{E}_{\pi}[\sum_{s=t}^{T-1} f(X_s,\alpha_s) + g(X_T) | X_t = x], \quad x \in \mathcal{X} 
+\end{align}
+$$
+where $\mathbb{E}_{\pi}$ denotes the expectation when $\alpha \sim \pi$.
+
+- The Q value function of $\pi$ which is defined as :
+$$\begin{align}
+Q_t^{\pi}(x,a) = \mathbb{E}_{\pi}[\sum_{s=t}^{T-1} f(X_s,\alpha_s) + g(X_T) | X_t = x,\alpha_t = a], \quad x \in \mathcal{X}, \alpha \in \mathcal{A}
+\end{align}
+$$
+
+
+- Notons par ailleurs que :
+$$
+V_t^{\pi}(x) = \mathbb{E}_{a \sim \pi_t(x)} [Q_t^{\pi}(x,a)]
+$$
+:::
+
+The goal is therefore to find a policy $\pi^{*}$ such that we have $V_t^{\pi^*}(x) = \underset{\pi}{\text{ sup }} V_t^{\pi}(x)$
+
+
+### Value-based methods
+
+In the case of valued based methods, the goal is to learn a representation of the value function $V^{\pi^*}$ and $Q^{\pi^*}$ and then derive the optimal policy from the value function.
+
+### Policy based methods
+
+In the case of policy based methods, we model directly the policies by parametric functions $\pi_{\theta}$ with parameters $\theta$ which can be approximators. For instance, we assume the following :
+
+- Stochastic randomized policies $\pi^{\theta}$ of parameter $\theta$ with density $a \mapsto \pi^{\theta}(t,x,a)$
+
+
+:::{#def-PolicyFunction}
+
+When we have a policy based method with a parameter $\theta$, we can define the performance of the policy $\pi^{\theta}$ as the following :
+
+$$
+J(\theta) = \mathbb{E}_{\pi^{\theta}} [ \sum_{t=0}^{T-1} f(X_t,\alpha_t) + g(X_T)]
+$$
+The goal is therefore to look for an optimal $\theta$ which maximises $J(\theta)$ using a gradient method.
+:::
+
+:::{#thm:GradientRepresentation}
+
+Denoting by $S=(X_0,\alpha_0,X_1,\ldots,\alpha_{T-1},X_T) a trajectory of state/action and by $R(S)$ the associated total reward by $R(S) = \sum_{t=0}^{T-1} f(X_t,\alpha_t) + g(X_T)$ so we have $J(\theta) = \mathbb{E}_{\pi^{\theta}}[R(S)]$. We have :
+
+$$
+\begin{align}
+\nabla_{\theta}J(\theta)= \mathbb{E}_{\pi^{\theta}}[R(S) \sum_{t=0}^{T-1} \nabla_{\theta} \text{ ln }\pi^{\theta}(t,X_t,\alpha_t)]
+\end{align}
+$$
+:::
+
+Preuve : TBD
+
+
+## MDP
+
+:::{#def-Test}
+Un intervalle de confiance de niveau $1-\alpha$ est un intervalle $I = [A,B]$ dont les bornes $A,B$ sont des statistiques, et tel que pour tout $\theta$, 
+$$P_\theta(\theta \in I) \geqslant 1 - \alpha.$$
+Un intervalle de confiance de niveau asymptotique $1-\alpha$ est une *suite* d'intervalles $I_n = [A_n,B_n]$ dont les bornes $A_n,B_n$ sont des statistiques, et tels que pour tout $n$,
+$$ P_\theta(\theta \in I_n) \geqslant 1 - \alpha.$$
+:::
+
+
+:::{#thm-biaisvar}
+
+
+
+## Décomposition biais-variance
+Le risque quadratique $\mathbb{E}_{\theta} [|\hat{\theta}-\theta|^2]$ est égal à 
+$$
+\underbrace{\operatorname{Var}_{\theta} (\hat{\theta})}_{\text{variance}} +
+\underbrace{\mathbb{E}_{\theta}[\hat{\theta}-\theta]^2}_{\text{carré du biais}} \, .
+$$
+:::
+
+
+:::{.proof}
+En notant $x$ l'espérance de $\hat{\theta}$, on voit que le risque quadratique est égal à $\mathbb{E}[|\hat{\theta} - x - (\theta - x)|^2]$. Le carré se développe en trois termes : le premier, $\mathbb{E}[|\hat{\theta} - x|^2]$, est la variance de $\hat{\theta}$. Le second, $-2\mathbb{E}[(\hat{\theta} - x)(\theta - x)]$, est égal à $-2(\theta - x)\mathbb{E}[\hat{\theta} - x]$, c'est-à-dire 0. Le dernier, $\mathbb{E}[(\theta - x)^2]$, est égal à $(\theta - x)^2$, c'est-à-dire $(\theta - \mathbb{E}[\hat{\theta}])^2$ : c'est bien le carré du biais. 
+:::
+
+
+![À gauche, RQ élevé mais biais nul ; à droite, RQ faible mais biais non nul. ](/images/cover.png){width=50%}
+
+:::{#exm-testadeq}
+
+On peut se demander si, dans la langue courante, les 21 lettres de l'alphabet ont à peu près la même probabilité d'apparaître comme première lettre d'un mot. Cela revient à tester si , hypothèse qui est évidemment fausse, il suffit de regarder l'épaisseur des 26 sections du dictionnaire pour s'en rendre compte. 
+
+Qu'en est-il des 9 chiffres ? On peut vouloir tester si, dans n'importe quel document (journal, site internet, article scientifique), ces 9 chiffres apparaissent à peu près uniformément en tant que premier chiffre d'un nombre. Cela reviendrait à tester. 
+
+Ce n'est pas le cas et cette hypothèse est très fréquemment réfutée : le premier chiffre significatif d'un nombre est bien plus souvent 1 ($\approx 30\%$ des cas) que $9$ ($\approx 5\%$ cas). Ce phénomène s'appelle [*loi de Benford*](https://fr.wikipedia.org/wiki/Loi_de_Benford). 
+
+:::
+
+### Value-based methods
+
+### Policy-based methods
+
+
+### TBD 
+
+
+### 
+
+
+
+## Reinforcement Learning in Continous Time
+
+
+### Problem Formulation
+
+
+
+### Policy gradient methods in continous time
+
+In the policy gradient method, we will consider parametric family of randomized policies admitting a density writh respect to $\nu$ on A given  by :
+
+$$
+\pi_{\theta}(t,x,da) = p(t,x,a) \nu(da)
+$$
+Therefore, the perforamnce value function which is also called critic with entropy regularizer is given by :
+
+$$
+\begin{align}
+V^{\pi_{\theta}}(t,x) = \mathbb{E}_{\pi^{\theta}} [ \int_{t}^{T} f(X_s,\alpha_s) - \lambda log (\pi_{\theta})(s,X_s,\alpha_s) + g(X_T) | X_t= x]
+$$
+and 
+$$
+J(\theta) = \mathbb{E}[V^{\pi_{\theta}}(0,X_0)]
+$$
+
+#### Policy Gradient Representation
+
+Let's dive into policy gradient representation now.
+
+
+#### Actor critic algorithms
+
+Let's dive into Actor critic algorithms
+
+### Q-learning and approximations in continous time
+
+#### TBD
+
+
+#### TBD 
+
+
+## To Go Further
+
+If you are interested in such topics, you can have a look at the following papers as this is a current research topic.
+
+

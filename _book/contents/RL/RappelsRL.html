@@ -113,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contents/RL/Rappels.html">Part n°1 : Reinforcement Learning</a></li><li class="breadcrumb-item"><a href="../../contents/RL/Rappels.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Reminders</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contents/RL/RappelsRL.html">Part n°1 : Reinforcement Learning</a></li><li class="breadcrumb-item"><a href="../../contents/RL/RappelsRL.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Reminders</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -159,7 +159,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/RL/Rappels.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../contents/RL/RappelsRL.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Reminders</span></span></a>
   </div>
 </li>
@@ -182,7 +182,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/DeepPDE/DeepPDE.html" class="sidebar-item-text sidebar-link">
+  <a href="../../contents/DeepPDE/RappelsDeepPDE.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Course Reminders</span></span></a>
   </div>
 </li>
@@ -205,7 +205,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/GenerativeIA/GenAI.html" class="sidebar-item-text sidebar-link">
+  <a href="../../contents/GenerativeIA/RappelsGenAI.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Course Reminders</span></span></a>
   </div>
 </li>
@@ -236,11 +236,12 @@ window.Quarto = {
   <li><a href="#some-foundations-of-reinforcement-learning" id="toc-some-foundations-of-reinforcement-learning" class="nav-link active" data-scroll-target="#some-foundations-of-reinforcement-learning"><span class="header-section-number">1.1</span> Some Foundations of Reinforcement Learning</a>
   <ul class="collapse">
   <li><a href="#basics-of-reinforcement-learning" id="toc-basics-of-reinforcement-learning" class="nav-link" data-scroll-target="#basics-of-reinforcement-learning"><span class="header-section-number">1.1.1</span> Basics of Reinforcement Learning</a></li>
-  <li><a href="#policy-based-methods" id="toc-policy-based-methods" class="nav-link" data-scroll-target="#policy-based-methods"><span class="header-section-number">1.1.2</span> Policy based methods</a></li>
+  <li><a href="#value-based-methods" id="toc-value-based-methods" class="nav-link" data-scroll-target="#value-based-methods"><span class="header-section-number">1.1.2</span> Value-based methods</a></li>
+  <li><a href="#policy-based-methods" id="toc-policy-based-methods" class="nav-link" data-scroll-target="#policy-based-methods"><span class="header-section-number">1.1.3</span> Policy based methods</a></li>
   </ul></li>
   <li><a href="#mdp" id="toc-mdp" class="nav-link" data-scroll-target="#mdp"><span class="header-section-number">1.2</span> MDP</a>
   <ul class="collapse">
-  <li><a href="#value-based-methods" id="toc-value-based-methods" class="nav-link" data-scroll-target="#value-based-methods"><span class="header-section-number">1.2.1</span> Value-based methods</a></li>
+  <li><a href="#value-based-methods-1" id="toc-value-based-methods-1" class="nav-link" data-scroll-target="#value-based-methods-1"><span class="header-section-number">1.2.1</span> Value-based methods</a></li>
   <li><a href="#policy-based-methods-1" id="toc-policy-based-methods-1" class="nav-link" data-scroll-target="#policy-based-methods-1"><span class="header-section-number">1.2.2</span> Policy-based methods</a></li>
   <li><a href="#tbd" id="toc-tbd" class="nav-link" data-scroll-target="#tbd"><span class="header-section-number">1.2.3</span> TBD</a></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">1.2.4</span> </a></li>
@@ -277,7 +278,7 @@ $$
 
 </p></div>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contents/RL/Rappels.html">Part n°1 : Reinforcement Learning</a></li><li class="breadcrumb-item"><a href="../../contents/RL/Rappels.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Reminders</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contents/RL/RappelsRL.html">Part n°1 : Reinforcement Learning</a></li><li class="breadcrumb-item"><a href="../../contents/RL/RappelsRL.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Reminders</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Reminders</span></h1>
 </div>
@@ -347,8 +348,12 @@ V_t^{\pi}(x) = \mathbb{E}_{a \sim \pi_t(x)} [Q_t^{\pi}(x,a)]
 </div>
 <p>The goal is therefore to find a policy <span class="math inline">\(\pi^{*}\)</span> such that we have <span class="math inline">\(V_t^{\pi^*}(x) = \underset{\pi}{\text{ sup }} V_t^{\pi}(x)\)</span></p>
 </section>
-<section id="policy-based-methods" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="policy-based-methods"><span class="header-section-number">1.1.2</span> Policy based methods</h3>
+<section id="value-based-methods" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="value-based-methods"><span class="header-section-number">1.1.2</span> Value-based methods</h3>
+<p>In the case of valued based methods, the goal is to learn a representation of the value function <span class="math inline">\(V^{\pi^*}\)</span> and <span class="math inline">\(Q^{\pi^*}\)</span> and then derive the optimal policy from the value function.</p>
+</section>
+<section id="policy-based-methods" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="policy-based-methods"><span class="header-section-number">1.1.3</span> Policy based methods</h3>
 <p>In the case of policy based methods, we model directly the policies by parametric functions <span class="math inline">\(\pi_{\theta}\)</span> with parameters <span class="math inline">\(\theta\)</span> which can be approximators. For instance, we assume the following :</p>
 <ul>
 <li>Stochastic randomized policies <span class="math inline">\(\pi^{\theta}\)</span> of parameter <span class="math inline">\(\theta\)</span> with density <span class="math inline">\(a \mapsto \pi^{\theta}(t,x,a)\)</span></li>
@@ -395,8 +400,8 @@ J(\theta) = \mathbb{E}_{\pi^{\theta}} [ \sum_{t=0}^{T-1} f(X_t,\alpha_t) + g(X_T
 <p>Qu’en est-il des 9 chiffres ? On peut vouloir tester si, dans n’importe quel document (journal, site internet, article scientifique), ces 9 chiffres apparaissent à peu près uniformément en tant que premier chiffre d’un nombre. Cela reviendrait à tester.</p>
 <p>Ce n’est pas le cas et cette hypothèse est très fréquemment réfutée : le premier chiffre significatif d’un nombre est bien plus souvent 1 (<span class="math inline">\(\approx 30\%\)</span> des cas) que <span class="math inline">\(9\)</span> (<span class="math inline">\(\approx 5\%\)</span> cas). Ce phénomène s’appelle <a href="https://fr.wikipedia.org/wiki/Loi_de_Benford"><em>loi de Benford</em></a>.</p>
 </div>
-<section id="value-based-methods" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="value-based-methods"><span class="header-section-number">1.2.1</span> Value-based methods</h3>
+<section id="value-based-methods-1" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="value-based-methods-1"><span class="header-section-number">1.2.1</span> Value-based methods</h3>
 </section>
 <section id="policy-based-methods-1" class="level3" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="policy-based-methods-1"><span class="header-section-number">1.2.2</span> Policy-based methods</h3>
@@ -415,6 +420,16 @@ J(\theta) = \mathbb{E}_{\pi^{\theta}} [ \sum_{t=0}^{T-1} f(X_t,\alpha_t) + g(X_T
 </section>
 <section id="policy-gradient-methods-in-continous-time" class="level3" data-number="1.3.2">
 <h3 data-number="1.3.2" class="anchored" data-anchor-id="policy-gradient-methods-in-continous-time"><span class="header-section-number">1.3.2</span> Policy gradient methods in continous time</h3>
+<p>In the policy gradient method, we will consider parametric family of randomized policies admitting a density writh respect to <span class="math inline">\(\nu\)</span> on A given by :</p>
+<p><span class="math display">\[
+\pi_{\theta}(t,x,da) = p(t,x,a) \nu(da)
+\]</span> Therefore, the perforamnce value function which is also called critic with entropy regularizer is given by :</p>
+<p><span class="math display">\[
+\begin{align}
+V^{\pi_{\theta}}(t,x) = \mathbb{E}_{\pi^{\theta}} [ \int_{t}^{T} f(X_s,\alpha_s) - \lambda log (\pi_{\theta})(s,X_s,\alpha_s) + g(X_T) | X_t= x]
+\]</span> and <span class="math display">\[
+J(\theta) = \mathbb{E}[V^{\pi_{\theta}}(0,X_0)]
+\]</span></p>
 <section id="policy-gradient-representation" class="level4" data-number="1.3.2.1">
 <h4 data-number="1.3.2.1" class="anchored" data-anchor-id="policy-gradient-representation"><span class="header-section-number">1.3.2.1</span> Policy Gradient Representation</h4>
 <p>Let’s dive into policy gradient representation now.</p>

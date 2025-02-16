@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Course Reminders – TP : Apprentissage automatique et contrôle stochastique</title>
+<title>3&nbsp; Course Reminders – TP : Apprentissage automatique et contrôle stochastique</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,18 +20,52 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../contents/RL/TP1.html" rel="next">
-<link href="../../index.html" rel="prev">
+<link href="../../contents/DeepPDE/TP2.html" rel="next">
+<link href="../../contents/RL/TP1.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,36 +104,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
 
 <link rel="stylesheet" href="../../utils/styles.css">
 </head>
@@ -113,7 +124,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contents/RL/Rappels.html">Part n°1 : Reinforcement Learning</a></li><li class="breadcrumb-item"><a href="../../contents/RL/Rappels.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Reminders</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contents/DeepPDE/RappelsDeepPDE.html">Part n°2 : DeepPDE</a></li><li class="breadcrumb-item"><a href="../../contents/DeepPDE/RappelsDeepPDE.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Course Reminders</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -159,7 +170,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/RL/Rappels.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../contents/RL/RappelsRL.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Reminders</span></span></a>
   </div>
 </li>
@@ -182,7 +193,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/DeepPDE/DeepPDE.html" class="sidebar-item-text sidebar-link">
+  <a href="../../contents/DeepPDE/RappelsDeepPDE.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Course Reminders</span></span></a>
   </div>
 </li>
@@ -205,7 +216,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contents/GenerativeIA/GenAI.html" class="sidebar-item-text sidebar-link">
+  <a href="../../contents/GenerativeIA/RappelsGenAI.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Course Reminders</span></span></a>
   </div>
 </li>
@@ -233,25 +244,14 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#some-foundations-of-reinforcement-learning" id="toc-some-foundations-of-reinforcement-learning" class="nav-link active" data-scroll-target="#some-foundations-of-reinforcement-learning"><span class="header-section-number">1.1</span> Some Foundations of Reinforcement Learning</a>
+  <li><a href="#some-reminders-on-pdes-and-stochastic-control" id="toc-some-reminders-on-pdes-and-stochastic-control" class="nav-link active" data-scroll-target="#some-reminders-on-pdes-and-stochastic-control"><span class="header-section-number">3.1</span> Some reminders on PDEs and stochastic control</a></li>
+  <li><a href="#neural-network-algorithms" id="toc-neural-network-algorithms" class="nav-link" data-scroll-target="#neural-network-algorithms"><span class="header-section-number">3.2</span> Neural Network Algorithms</a>
   <ul class="collapse">
-  <li><a href="#basics-of-reinforcement-learning" id="toc-basics-of-reinforcement-learning" class="nav-link" data-scroll-target="#basics-of-reinforcement-learning"><span class="header-section-number">1.1.1</span> Basics of Reinforcement Learning</a></li>
-  <li><a href="#policy-based-methods" id="toc-policy-based-methods" class="nav-link" data-scroll-target="#policy-based-methods"><span class="header-section-number">1.1.2</span> Policy based methods</a></li>
+  <li><a href="#deep-galerkin-method" id="toc-deep-galerkin-method" class="nav-link" data-scroll-target="#deep-galerkin-method"><span class="header-section-number">3.2.1</span> Deep Galerkin Method</a></li>
+  <li><a href="#deep-bsde" id="toc-deep-bsde" class="nav-link" data-scroll-target="#deep-bsde"><span class="header-section-number">3.2.2</span> Deep BSDE</a></li>
+  <li><a href="#deep-bdp" id="toc-deep-bdp" class="nav-link" data-scroll-target="#deep-bdp"><span class="header-section-number">3.2.3</span> Deep BDP</a></li>
   </ul></li>
-  <li><a href="#mdp" id="toc-mdp" class="nav-link" data-scroll-target="#mdp"><span class="header-section-number">1.2</span> MDP</a>
-  <ul class="collapse">
-  <li><a href="#value-based-methods" id="toc-value-based-methods" class="nav-link" data-scroll-target="#value-based-methods"><span class="header-section-number">1.2.1</span> Value-based methods</a></li>
-  <li><a href="#policy-based-methods-1" id="toc-policy-based-methods-1" class="nav-link" data-scroll-target="#policy-based-methods-1"><span class="header-section-number">1.2.2</span> Policy-based methods</a></li>
-  <li><a href="#tbd" id="toc-tbd" class="nav-link" data-scroll-target="#tbd"><span class="header-section-number">1.2.3</span> TBD</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">1.2.4</span> </a></li>
-  </ul></li>
-  <li><a href="#reinforcement-learning-in-continous-time" id="toc-reinforcement-learning-in-continous-time" class="nav-link" data-scroll-target="#reinforcement-learning-in-continous-time"><span class="header-section-number">1.3</span> Reinforcement Learning in Continous Time</a>
-  <ul class="collapse">
-  <li><a href="#problem-formulation" id="toc-problem-formulation" class="nav-link" data-scroll-target="#problem-formulation"><span class="header-section-number">1.3.1</span> Problem Formulation</a></li>
-  <li><a href="#policy-gradient-methods-in-continous-time" id="toc-policy-gradient-methods-in-continous-time" class="nav-link" data-scroll-target="#policy-gradient-methods-in-continous-time"><span class="header-section-number">1.3.2</span> Policy gradient methods in continous time</a></li>
-  <li><a href="#q-learning-and-approximations-in-continous-time" id="toc-q-learning-and-approximations-in-continous-time" class="nav-link" data-scroll-target="#q-learning-and-approximations-in-continous-time"><span class="header-section-number">1.3.3</span> Q-learning and approximations in continous time</a></li>
-  </ul></li>
-  <li><a href="#to-go-further" id="toc-to-go-further" class="nav-link" data-scroll-target="#to-go-further"><span class="header-section-number">1.4</span> To Go Further</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">3.3</span> </a></li>
   </ul>
 </nav>
     </div>
@@ -277,9 +277,9 @@ $$
 
 </p></div>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contents/RL/Rappels.html">Part n°1 : Reinforcement Learning</a></li><li class="breadcrumb-item"><a href="../../contents/RL/Rappels.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Reminders</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contents/DeepPDE/RappelsDeepPDE.html">Part n°2 : DeepPDE</a></li><li class="breadcrumb-item"><a href="../../contents/DeepPDE/RappelsDeepPDE.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Course Reminders</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Course Reminders</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Course Reminders</span></h1>
 </div>
 
 
@@ -296,147 +296,121 @@ $$
 </header>
 
 
-<section id="some-foundations-of-reinforcement-learning" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="some-foundations-of-reinforcement-learning"><span class="header-section-number">1.1</span> Some Foundations of Reinforcement Learning</h2>
-<p>We will introduce in the following the main concepts of Reinforcement Learning. If you want to look for more in depth theory, you can look at</p>
-<section id="basics-of-reinforcement-learning" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="basics-of-reinforcement-learning"><span class="header-section-number">1.1.1</span> Basics of Reinforcement Learning</h3>
-<div id="def-MDP" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.1</strong></span> A Markov Decision Process is a quadruplet given by <span class="math inline">\((\mathcal{X},\mathcal{A},P,r=(f,g))\)</span> such that :</p>
-<ul>
-<li><span class="math inline">\(\mathcal{X}\)</span> denotes the space of states on which the discrete time state process <span class="math inline">\((X_t)_{t \in \mathbb{N}}\)</span></li>
-<li><span class="math inline">\(\mathcal{A}\)</span> denotes the space of actions in which the control <span class="math inline">\((\alpha_t)_{t \in \mathbb{N}}\)</span> is defined</li>
-<li>State dynamics given by : <span class="math display">\[X_{t+1} \sim P_t(X_t,\alpha_t)\]</span> with a probability transition given by an application <span class="math inline">\((t,x,a) \in \mathbb{N} \times \mathcal{X} \times \mathcal{A} \mapsto P_t(x,a,dx') \in \mathcal{P}(\mathcal{X})\)</span>.</li>
-<li>Reward given by a couple <span class="math inline">\((f,g)\)</span> such that :
-<ul>
-<li><span class="math inline">\(f(x,a)\)</span> is a running reward obtained in state <span class="math inline">\(x\)</span> when choosing the action <span class="math inline">\(a\)</span></li>
-<li>Terminal reward <span class="math inline">\(g(x)\)</span></li>
-<li>Discount factor <span class="math inline">\(\beta \in [0,1]\)</span></li>
-</ul></li>
-</ul>
-</div>
-<p>Now, that we have defined the main components of a reinforcement learning problem, we can define the notion of policy</p>
-<div id="def-Policy" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.2</strong></span> A policy <span class="math inline">\(\pi=(\pi_t)_{t \in \mathbb{N}^{*}}\)</span> is a sequence of actions choosen in a markovian setting with respect to the state variable. A policy <span class="math inline">\(\pi\)</span> can be either :</p>
-<ul>
-<li>deterministic when <span class="math inline">\(\pi_t : \mathcal{X} \mapsto \mathcal{A}\)</span></li>
-<li>randomized when <span class="math inline">\(\pi_t : \mathcal{X} : \mapsto \mathcal{P}(\mathcal{A})\)</span> meaning that <span class="math inline">\(\pi_t\)</span> is a probability distribution of choosing an action at time <span class="math inline">\(t\)</span> in state <span class="math inline">\(x\)</span>.</li>
-</ul>
-<p>We will say that a control <span class="math inline">\(\alpha = (\alpha_t)_{t \in \mathbb{N}}\)</span> is drawn from a policy <span class="math inline">\(\pi\)</span> if for each <span class="math inline">\(t \in \mathbb{N}\)</span>, we have :</p>
-<ul>
-<li><span class="math inline">\(\alpha_t =\pi_t(X_t)\)</span> in the case of deterministic policies</li>
-<li><span class="math inline">\(\alpha_t \sim \pi_t(X_t)\)</span> in the case of randomized policies.</li>
-</ul>
-</div>
-<p>The goal of Reinforcement Learning will be to learn the control <span class="math inline">\(\alpha\)</span> with maximises the sum of rewards which will be defined in the value function.</p>
-<div id="def-valuefunction" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.3</strong></span> Given a policy <span class="math inline">\(\pi=(\pi_t)_{t \in \mathbb{N}}\)</span> and an horizon <span class="math inline">\(T \in \mathbb{N}\)</span>, we define :</p>
-<ul>
-<li><p>The state value function is defined as : <span class="math display">\[\begin{align}
-V_t^{\pi}(x) = \mathbb{E}_{\pi}[\sum_{s=t}^{T-1} f(X_s,\alpha_s) + g(X_T) | X_t = x], \quad x \in \mathcal{X}
-\end{align}
-\]</span> where <span class="math inline">\(\mathbb{E}_{\pi}\)</span> denotes the expectation when <span class="math inline">\(\alpha \sim \pi\)</span>.</p></li>
-<li><p>The Q value function of <span class="math inline">\(\pi\)</span> which is defined as : <span class="math display">\[\begin{align}
-Q_t^{\pi}(x,a) = \mathbb{E}_{\pi}[\sum_{s=t}^{T-1} f(X_s,\alpha_s) + g(X_T) | X_t = x,\alpha_t = a], \quad x \in \mathcal{X}, \alpha \in \mathcal{A}
-\end{align}
-\]</span></p></li>
-<li><p>Notons par ailleurs que : <span class="math display">\[
-V_t^{\pi}(x) = \mathbb{E}_{a \sim \pi_t(x)} [Q_t^{\pi}(x,a)]
-\]</span></p></li>
-</ul>
-</div>
-<p>The goal is therefore to find a policy <span class="math inline">\(\pi^{*}\)</span> such that we have <span class="math inline">\(V_t^{\pi^*}(x) = \underset{\pi}{\text{ sup }} V_t^{\pi}(x)\)</span></p>
+<section id="some-reminders-on-pdes-and-stochastic-control" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="some-reminders-on-pdes-and-stochastic-control"><span class="header-section-number">3.1</span> Some reminders on PDEs and stochastic control</h2>
 </section>
-<section id="policy-based-methods" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="policy-based-methods"><span class="header-section-number">1.1.2</span> Policy based methods</h3>
-<p>In the case of policy based methods, we model directly the policies by parametric functions <span class="math inline">\(\pi_{\theta}\)</span> with parameters <span class="math inline">\(\theta\)</span> which can be approximators. For instance, we assume the following :</p>
-<ul>
-<li>Stochastic randomized policies <span class="math inline">\(\pi^{\theta}\)</span> of parameter <span class="math inline">\(\theta\)</span> with density <span class="math inline">\(a \mapsto \pi^{\theta}(t,x,a)\)</span></li>
-</ul>
-<div id="def-PolicyFunction" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.4</strong></span> When we have a policy based method with a parameter <span class="math inline">\(\theta\)</span>, we can define the performance of the policy <span class="math inline">\(\pi^{\theta}\)</span> as the following :</p>
-<p><span class="math display">\[
-J(\theta) = \mathbb{E}_{\pi^{\theta}} [ \sum_{t=0}^{T-1} f(X_t,\alpha_t) + g(X_T)]
-\]</span> The goal is therefore to look for an optimal <span class="math inline">\(\theta\)</span> which maximises <span class="math inline">\(J(\theta)\)</span> using a gradient method.</p>
-</div>
-<div id="thm:GradientRepresentation">
-<p>Denoting by $S=(X_0,<em>0,X_1,,</em>{T-1},X_T) a trajectory of state/action and by <span class="math inline">\(R(S)\)</span> the associated total reward by <span class="math inline">\(R(S) = \sum_{t=0}^{T-1} f(X_t,\alpha_t) + g(X_T)\)</span> so we have <span class="math inline">\(J(\theta) = \mathbb{E}_{\pi^{\theta}}[R(S)]\)</span>. We have :</p>
-<p><span class="math display">\[
-\begin{align}
-\nabla_{\theta}J(\theta)= \mathbb{E}_{\pi^{\theta}}[R(S) \sum_{t=0}^{T-1} \nabla_{\theta} \text{ ln }\pi^{\theta}(t,X_t,\alpha_t)]
-\end{align}
-\]</span></p>
-</div>
-<p>Preuve : TBD</p>
+<section id="neural-network-algorithms" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="neural-network-algorithms"><span class="header-section-number">3.2</span> Neural Network Algorithms</h2>
+<section id="deep-galerkin-method" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="deep-galerkin-method"><span class="header-section-number">3.2.1</span> Deep Galerkin Method</h3>
+<p>This method is based on the seminal papers : Insérer Références.</p>
+<p>Insérer Graphiques</p>
+</section>
+<section id="deep-bsde" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="deep-bsde"><span class="header-section-number">3.2.2</span> Deep BSDE</h3>
+<p>Insérer Graphiques</p>
+</section>
+<section id="deep-bdp" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="deep-bdp"><span class="header-section-number">3.2.3</span> Deep BDP</h3>
+<p>This method is based on the seminal papers : Insérer Références</p>
 </section>
 </section>
-<section id="mdp" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="mdp"><span class="header-section-number">1.2</span> MDP</h2>
-<div id="def-Test" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.5</strong></span> Un intervalle de confiance de niveau <span class="math inline">\(1-\alpha\)</span> est un intervalle <span class="math inline">\(I = [A,B]\)</span> dont les bornes <span class="math inline">\(A,B\)</span> sont des statistiques, et tel que pour tout <span class="math inline">\(\theta\)</span>, <span class="math display">\[P_\theta(\theta \in I) \geqslant 1 - \alpha.\]</span> Un intervalle de confiance de niveau asymptotique <span class="math inline">\(1-\alpha\)</span> est une <em>suite</em> d’intervalles <span class="math inline">\(I_n = [A_n,B_n]\)</span> dont les bornes <span class="math inline">\(A_n,B_n\)</span> sont des statistiques, et tels que pour tout <span class="math inline">\(n\)</span>, <span class="math display">\[ P_\theta(\theta \in I_n) \geqslant 1 - \alpha.\]</span></p>
+<section id="section" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="section"><span class="header-section-number">3.3</span> </h2>
+<div id="a445e2cc" class="cell" data-output-location="column-fragment" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  Import des Librairies</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Test</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.arange(<span class="dv">5</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x) :</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>L<span class="op">=</span>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">6</span>)]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.scatter(L,[f(l) <span class="cf">for</span> l <span class="kw">in</span> L])</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Test"</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Test2"</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Test Scatter Plot"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemple simple de DataFrame</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Nom'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>, <span class="st">'David'</span>],</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Âge'</span>: [<span class="dv">24</span>, <span class="dv">30</span>, <span class="dv">18</span>, <span class="dv">22</span>],</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Ville'</span>: [<span class="st">'Paris'</span>, <span class="st">'Lyon'</span>, <span class="st">'Marseille'</span>, <span class="st">'Toulouse'</span>],</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Score'</span>: [<span class="fl">85.5</span>, <span class="fl">90.0</span>, <span class="fl">78.0</span>, <span class="fl">88.5</span>]</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[0 1 2 3 4]</code></pre>
 </div>
-<div id="thm-biaisvar" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1.1 (Décomposition biais-variance)</strong></span> Le risque quadratique <span class="math inline">\(\mathbb{E}_{\theta} [|\hat{\theta}-\theta|^2]\)</span> est égal à <span class="math display">\[
-\underbrace{\operatorname{Var}_{\theta} (\hat{\theta})}_{\text{variance}} +
-\underbrace{\mathbb{E}_{\theta}[\hat{\theta}-\theta]^2}_{\text{carré du biais}} \, .
-\]</span></p>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Nom</th>
+<th data-quarto-table-cell-role="th">Âge</th>
+<th data-quarto-table-cell-role="th">Ville</th>
+<th data-quarto-table-cell-role="th">Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Alice</td>
+<td>24</td>
+<td>Paris</td>
+<td>85.5</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Bob</td>
+<td>30</td>
+<td>Lyon</td>
+<td>90.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Charlie</td>
+<td>18</td>
+<td>Marseille</td>
+<td>78.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>David</td>
+<td>22</td>
+<td>Toulouse</td>
+<td>88.5</td>
+</tr>
+</tbody>
+</table>
+
 </div>
-<div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>En notant <span class="math inline">\(x\)</span> l’espérance de <span class="math inline">\(\hat{\theta}\)</span>, on voit que le risque quadratique est égal à <span class="math inline">\(\mathbb{E}[|\hat{\theta} - x - (\theta - x)|^2]\)</span>. Le carré se développe en trois termes :&nbsp;le premier, <span class="math inline">\(\mathbb{E}[|\hat{\theta} - x|^2]\)</span>, est la variance de <span class="math inline">\(\hat{\theta}\)</span>. Le second, <span class="math inline">\(-2\mathbb{E}[(\hat{\theta} - x)(\theta - x)]\)</span>, est égal à <span class="math inline">\(-2(\theta - x)\mathbb{E}[\hat{\theta} - x]\)</span>, c’est-à-dire 0. Le dernier, <span class="math inline">\(\mathbb{E}[(\theta - x)^2]\)</span>, est égal à <span class="math inline">\((\theta - x)^2\)</span>, c’est-à-dire <span class="math inline">\((\theta - \mathbb{E}[\hat{\theta}])^2\)</span> :&nbsp;c’est bien le carré du biais.</p>
 </div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="../..\images/cover.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>À&nbsp;gauche, RQ élevé mais biais nul ;&nbsp;à droite, RQ faible mais biais non nul.</figcaption>
+<p><img src="RappelsDeepPDE_files/figure-html/cell-2-output-3.png" width="585" height="449" class="figure-img"></p>
 </figure>
 </div>
-<div id="exm-testadeq" class="theorem example">
-<p><span class="theorem-title"><strong>Example 1.1</strong></span> On peut se demander si, dans la langue courante, les 21 lettres de l’alphabet ont à peu près la même probabilité d’apparaître comme première lettre d’un mot. Cela revient à tester si , hypothèse qui est évidemment fausse, il suffit de regarder l’épaisseur des 26 sections du dictionnaire pour s’en rendre compte.</p>
-<p>Qu’en est-il des 9 chiffres ? On peut vouloir tester si, dans n’importe quel document (journal, site internet, article scientifique), ces 9 chiffres apparaissent à peu près uniformément en tant que premier chiffre d’un nombre. Cela reviendrait à tester.</p>
-<p>Ce n’est pas le cas et cette hypothèse est très fréquemment réfutée : le premier chiffre significatif d’un nombre est bien plus souvent 1 (<span class="math inline">\(\approx 30\%\)</span> des cas) que <span class="math inline">\(9\)</span> (<span class="math inline">\(\approx 5\%\)</span> cas). Ce phénomène s’appelle <a href="https://fr.wikipedia.org/wiki/Loi_de_Benford"><em>loi de Benford</em></a>.</p>
 </div>
-<section id="value-based-methods" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="value-based-methods"><span class="header-section-number">1.2.1</span> Value-based methods</h3>
-</section>
-<section id="policy-based-methods-1" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="policy-based-methods-1"><span class="header-section-number">1.2.2</span> Policy-based methods</h3>
-</section>
-<section id="tbd" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="tbd"><span class="header-section-number">1.2.3</span> TBD</h3>
-</section>
-<section id="section" class="level3" data-number="1.2.4">
-<h3 data-number="1.2.4" class="anchored" data-anchor-id="section"><span class="header-section-number">1.2.4</span> </h3>
-</section>
-</section>
-<section id="reinforcement-learning-in-continous-time" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="reinforcement-learning-in-continous-time"><span class="header-section-number">1.3</span> Reinforcement Learning in Continous Time</h2>
-<section id="problem-formulation" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="problem-formulation"><span class="header-section-number">1.3.1</span> Problem Formulation</h3>
-</section>
-<section id="policy-gradient-methods-in-continous-time" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="policy-gradient-methods-in-continous-time"><span class="header-section-number">1.3.2</span> Policy gradient methods in continous time</h3>
-<section id="policy-gradient-representation" class="level4" data-number="1.3.2.1">
-<h4 data-number="1.3.2.1" class="anchored" data-anchor-id="policy-gradient-representation"><span class="header-section-number">1.3.2.1</span> Policy Gradient Representation</h4>
-<p>Let’s dive into policy gradient representation now.</p>
-</section>
-<section id="actor-critic-algorithms" class="level4" data-number="1.3.2.2">
-<h4 data-number="1.3.2.2" class="anchored" data-anchor-id="actor-critic-algorithms"><span class="header-section-number">1.3.2.2</span> Actor critic algorithms</h4>
-<p>Let’s dive into Actor critic algorithms</p>
-</section>
-</section>
-<section id="q-learning-and-approximations-in-continous-time" class="level3" data-number="1.3.3">
-<h3 data-number="1.3.3" class="anchored" data-anchor-id="q-learning-and-approximations-in-continous-time"><span class="header-section-number">1.3.3</span> Q-learning and approximations in continous time</h3>
-<section id="tbd-1" class="level4" data-number="1.3.3.1">
-<h4 data-number="1.3.3.1" class="anchored" data-anchor-id="tbd-1"><span class="header-section-number">1.3.3.1</span> TBD</h4>
-</section>
-<section id="tbd-2" class="level4" data-number="1.3.3.2">
-<h4 data-number="1.3.3.2" class="anchored" data-anchor-id="tbd-2"><span class="header-section-number">1.3.3.2</span> TBD</h4>
-</section>
-</section>
-</section>
-<section id="to-go-further" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="to-go-further"><span class="header-section-number">1.4</span> To Go Further</h2>
-<p>If you are interested in such topics, you can have a look at the following papers as this is a current research topic.</p>
+</div>
+<div id="def-quarto" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3.1</strong></span> A noter qu’il faut être à l’aise sur l’utilisation de Quarto</p>
+</div>
 
 
 </section>
@@ -1008,13 +982,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../index.html" class="pagination-link" aria-label="Organisation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Organisation</span>
+      <a href="../../contents/RL/TP1.html" class="pagination-link" aria-label="Enoncé du TP n°1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Enoncé du TP n°1</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../contents/RL/TP1.html" class="pagination-link" aria-label="Enoncé du TP n°1">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Enoncé du TP n°1</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../contents/DeepPDE/TP2.html" class="pagination-link" aria-label="Enoncé du TP n°2">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Enoncé du TP n°2</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

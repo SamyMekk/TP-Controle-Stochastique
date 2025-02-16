@@ -1,7 +1,7 @@
 project:
   type: book
 
-lang: fr
+lang: en
 
 
 book:
@@ -14,15 +14,15 @@ book:
 
      - part: "Part n°1  : Reinforcement Learning"
        chapters:
-         - contents/RL/Rappels.qmd 
+         - contents/RL/RappelsRL.qmd 
          - contents/RL/TP1.qmd
      - part: "Part n°2 : DeepPDE"
        chapters:
-         - contents/DeepPDE/DeepPDE.qmd
+         - contents/DeepPDE/RappelsDeepPDE.qmd
          - contents/DeepPDE/TP2.qmd
      - part: "Part n°3 : Generative IA"
        chapters:
-         - contents/GenerativeIA/GenAI.qmd
+         - contents/GenerativeIA/RappelsGenAI.qmd
          - contents/GenerativeIA/TP3.qmd
  
      - references.qmd
