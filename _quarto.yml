@@ -19,11 +19,11 @@ book:
      - part: "Part n°2  : Reinforcement Learning"
        chapters:
          - contents/RL/RappelsRL.qmd 
-         - contents/RL/TP2.qmd
+         #- contents/RL/TP2.qmd
      - part: "Part n°3 : Generative AI"
        chapters:
          - contents/GenerativeIA/RappelsGenAI.qmd
-         - contents/GenerativeIA/TP3.qmd
+         #- contents/GenerativeIA/TP3.qmd
  
      - references.qmd
 
