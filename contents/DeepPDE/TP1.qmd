@@ -1,4 +1,4 @@
 # Enoncé du TP n°1
 
-[Télécharger le notebook pour le TP n°1](TP1-PDE/TP%20n%C2%B01%20-%20Deep%20Learning%20For%20PDEs.ipynb)
+You can download the TP n°1 by clicking [here](TP1-PDE/TP%20n%C2%B01%20-%20Deep%20Learning%20For%20PDEs.ipynb)
 
