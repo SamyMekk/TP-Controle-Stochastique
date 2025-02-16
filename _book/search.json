@@ -65,12 +65,12 @@
   {
     "objectID": "contents/DeepPDE/TP1.html",
     "href": "contents/DeepPDE/TP1.html",
-    "title": "2  Enoncé du TP n°2",
+    "title": "2  Enoncé du TP n°1",
     "section": "",
     "text": "$$\n\n\\newcommand{\\bx}{\\boldsymbol{x}}\n\n\\newcommand{\\bt}{\\boldsymbol{\\theta}}\n\n\\newcommand{\\dkl}{\\mathrm{d}_{\\mathrm{KL}}}\n\n\\newcommand{\\dtv}{\\mathrm{d}_{\\mathrm{TV}}}\n\n\\newcommand{\\emv}{\\hat{\\theta}_{\\mathrm{emv}}}\n\n\\newcommand{\\ent}{\\mathrm{Ent}}\n\n$$\n\n\n\n\n\n\nTélécharger le notebook pour le TP n°1",
     "crumbs": [
       "Part n°1 : Deep Learning for PDEs",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Enoncé du TP n°2</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Enoncé du TP n°1</span>"
     ]
   },
   {
