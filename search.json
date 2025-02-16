@@ -30,52 +30,52 @@
     ]
   },
   {
-    "objectID": "contents/RL/Rappels.html",
-    "href": "contents/RL/Rappels.html",
+    "objectID": "contents/RL/RappelsRL.html",
+    "href": "contents/RL/RappelsRL.html",
     "title": "1  Course Reminders",
     "section": "",
-    "text": "1.1 Some Foundations of Reinforcement Learning",
+    "text": "1.1 Some Foundations of Reinforcement Learning\nWe will introduce in the following the main concepts of Reinforcement Learning. If you want to look for more in depth theory, you can look at",
     "crumbs": [
       "Part n°1  : Reinforcement Learning",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Reminders</span>"
     ]
   },
   {
-    "objectID": "contents/RL/Rappels.html#some-foundations-of-reinforcement-learning",
-    "href": "contents/RL/Rappels.html#some-foundations-of-reinforcement-learning",
+    "objectID": "contents/RL/RappelsRL.html#some-foundations-of-reinforcement-learning",
+    "href": "contents/RL/RappelsRL.html#some-foundations-of-reinforcement-learning",
     "title": "1  Course Reminders",
     "section": "",
-    "text": "1.1.1 Markov Decision Processes\n\nDéfinition 1.1 Test",
+    "text": "1.1.1 Basics of Reinforcement Learning\n\nDefinition 1.1 A Markov Decision Process is a quadruplet given by \\((\\mathcal{X},\\mathcal{A},P,r=(f,g))\\) such that :\n\n\\(\\mathcal{X}\\) denotes the space of states on which the discrete time state process \\((X_t)_{t \\in \\mathbb{N}}\\)\n\\(\\mathcal{A}\\) denotes the space of actions in which the control \\((\\alpha_t)_{t \\in \\mathbb{N}}\\) is defined\nState dynamics given by : \\[X_{t+1} \\sim P_t(X_t,\\alpha_t)\\] with a probability transition given by an application \\((t,x,a) \\in \\mathbb{N} \\times \\mathcal{X} \\times \\mathcal{A} \\mapsto P_t(x,a,dx') \\in \\mathcal{P}(\\mathcal{X})\\).\nReward given by a couple \\((f,g)\\) such that :\n\n\\(f(x,a)\\) is a running reward obtained in state \\(x\\) when choosing the action \\(a\\)\nTerminal reward \\(g(x)\\)\nDiscount factor \\(\\beta \\in [0,1]\\)\n\n\n\nNow, that we have defined the main components of a reinforcement learning problem, we can define the notion of policy\n\nDefinition 1.2 A policy \\(\\pi=(\\pi_t)_{t \\in \\mathbb{N}^{*}}\\) is a sequence of actions choosen in a markovian setting with respect to the state variable. A policy \\(\\pi\\) can be either :\n\ndeterministic when \\(\\pi_t : \\mathcal{X} \\mapsto \\mathcal{A}\\)\nrandomized when \\(\\pi_t : \\mathcal{X} : \\mapsto \\mathcal{P}(\\mathcal{A})\\) meaning that \\(\\pi_t\\) is a probability distribution of choosing an action at time \\(t\\) in state \\(x\\).\n\nWe will say that a control \\(\\alpha = (\\alpha_t)_{t \\in \\mathbb{N}}\\) is drawn from a policy \\(\\pi\\) if for each \\(t \\in \\mathbb{N}\\), we have :\n\n\\(\\alpha_t =\\pi_t(X_t)\\) in the case of deterministic policies\n\\(\\alpha_t \\sim \\pi_t(X_t)\\) in the case of randomized policies.\n\n\nThe goal of Reinforcement Learning will be to learn the control \\(\\alpha\\) with maximises the sum of rewards which will be defined in the value function.\n\nDefinition 1.3 Given a policy \\(\\pi=(\\pi_t)_{t \\in \\mathbb{N}}\\) and an horizon \\(T \\in \\mathbb{N}\\), we define :\n\nThe state value function is defined as : \\[\\begin{align}\nV_t^{\\pi}(x) = \\mathbb{E}_{\\pi}[\\sum_{s=t}^{T-1} f(X_s,\\alpha_s) + g(X_T) | X_t = x], \\quad x \\in \\mathcal{X}\n\\end{align}\n\\] where \\(\\mathbb{E}_{\\pi}\\) denotes the expectation when \\(\\alpha \\sim \\pi\\).\nThe Q value function of \\(\\pi\\) which is defined as : \\[\\begin{align}\nQ_t^{\\pi}(x,a) = \\mathbb{E}_{\\pi}[\\sum_{s=t}^{T-1} f(X_s,\\alpha_s) + g(X_T) | X_t = x,\\alpha_t = a], \\quad x \\in \\mathcal{X}, \\alpha \\in \\mathcal{A}\n\\end{align}\n\\]\nNotons par ailleurs que : \\[\nV_t^{\\pi}(x) = \\mathbb{E}_{a \\sim \\pi_t(x)} [Q_t^{\\pi}(x,a)]\n\\]\n\n\nThe goal is therefore to find a policy \\(\\pi^{*}\\) such that we have \\(V_t^{\\pi^*}(x) = \\underset{\\pi}{\\text{ sup }} V_t^{\\pi}(x)\\)\n\n\n1.1.2 Value-based methods\nIn the case of valued based methods, the goal is to learn a representation of the value function \\(V^{\\pi^*}\\) and \\(Q^{\\pi^*}\\) and then derive the optimal policy from the value function.\n\n\n1.1.3 Policy based methods\nIn the case of policy based methods, we model directly the policies by parametric functions \\(\\pi_{\\theta}\\) with parameters \\(\\theta\\) which can be approximators. For instance, we assume the following :\n\nStochastic randomized policies \\(\\pi^{\\theta}\\) of parameter \\(\\theta\\) with density \\(a \\mapsto \\pi^{\\theta}(t,x,a)\\)\n\n\nDefinition 1.4 When we have a policy based method with a parameter \\(\\theta\\), we can define the performance of the policy \\(\\pi^{\\theta}\\) as the following :\n\\[\nJ(\\theta) = \\mathbb{E}_{\\pi^{\\theta}} [ \\sum_{t=0}^{T-1} f(X_t,\\alpha_t) + g(X_T)]\n\\] The goal is therefore to look for an optimal \\(\\theta\\) which maximises \\(J(\\theta)\\) using a gradient method.\n\n\nDenoting by $S=(X_0,0,X_1,,{T-1},X_T) a trajectory of state/action and by \\(R(S)\\) the associated total reward by \\(R(S) = \\sum_{t=0}^{T-1} f(X_t,\\alpha_t) + g(X_T)\\) so we have \\(J(\\theta) = \\mathbb{E}_{\\pi^{\\theta}}[R(S)]\\). We have :\n\\[\n\\begin{align}\n\\nabla_{\\theta}J(\\theta)= \\mathbb{E}_{\\pi^{\\theta}}[R(S) \\sum_{t=0}^{T-1} \\nabla_{\\theta} \\text{ ln }\\pi^{\\theta}(t,X_t,\\alpha_t)]\n\\end{align}\n\\]\n\nPreuve : TBD",
     "crumbs": [
       "Part n°1  : Reinforcement Learning",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Reminders</span>"
     ]
   },
   {
-    "objectID": "contents/RL/Rappels.html#mdp",
-    "href": "contents/RL/Rappels.html#mdp",
+    "objectID": "contents/RL/RappelsRL.html#mdp",
+    "href": "contents/RL/RappelsRL.html#mdp",
     "title": "1  Course Reminders",
     "section": "1.2 MDP",
-    "text": "1.2 MDP\n\nDéfinition 1.2 Un intervalle de confiance de niveau \\(1-\\alpha\\) est un intervalle \\(I = [A,B]\\) dont les bornes \\(A,B\\) sont des statistiques, et tel que pour tout \\(\\theta\\), \\[P_\\theta(\\theta \\in I) \\geqslant 1 - \\alpha.\\] Un intervalle de confiance de niveau asymptotique \\(1-\\alpha\\) est une suite d’intervalles \\(I_n = [A_n,B_n]\\) dont les bornes \\(A_n,B_n\\) sont des statistiques, et tels que pour tout \\(n\\), \\[ P_\\theta(\\theta \\in I_n) \\geqslant 1 - \\alpha.\\]\n\n\nThéorème 1.1 (Décomposition biais-variance) Le risque quadratique \\(\\mathbb{E}_{\\theta} [|\\hat{\\theta}-\\theta|^2]\\) est égal à \\[\n\\underbrace{\\operatorname{Var}_{\\theta} (\\hat{\\theta})}_{\\text{variance}} +\n\\underbrace{\\mathbb{E}_{\\theta}[\\hat{\\theta}-\\theta]^2}_{\\text{carré du biais}} \\, .\n\\]\n\n\nPreuve. En notant \\(x\\) l’espérance de \\(\\hat{\\theta}\\), on voit que le risque quadratique est égal à \\(\\mathbb{E}[|\\hat{\\theta} - x - (\\theta - x)|^2]\\). Le carré se développe en trois termes : le premier, \\(\\mathbb{E}[|\\hat{\\theta} - x|^2]\\), est la variance de \\(\\hat{\\theta}\\). Le second, \\(-2\\mathbb{E}[(\\hat{\\theta} - x)(\\theta - x)]\\), est égal à \\(-2(\\theta - x)\\mathbb{E}[\\hat{\\theta} - x]\\), c’est-à-dire 0. Le dernier, \\(\\mathbb{E}[(\\theta - x)^2]\\), est égal à \\((\\theta - x)^2\\), c’est-à-dire \\((\\theta - \\mathbb{E}[\\hat{\\theta}])^2\\) : c’est bien le carré du biais.\n\n\n\n\nÀ gauche, RQ élevé mais biais nul ; à droite, RQ faible mais biais non nul.\n\n\n\nExemple 1.1 On peut se demander si, dans la langue courante, les 21 lettres de l’alphabet ont à peu près la même probabilité d’apparaître comme première lettre d’un mot. Cela revient à tester si , hypothèse qui est évidemment fausse, il suffit de regarder l’épaisseur des 26 sections du dictionnaire pour s’en rendre compte.\nQu’en est-il des 9 chiffres ? On peut vouloir tester si, dans n’importe quel document (journal, site internet, article scientifique), ces 9 chiffres apparaissent à peu près uniformément en tant que premier chiffre d’un nombre. Cela reviendrait à tester.\nCe n’est pas le cas et cette hypothèse est très fréquemment réfutée : le premier chiffre significatif d’un nombre est bien plus souvent 1 (\\(\\approx 30\\%\\) des cas) que \\(9\\) (\\(\\approx 5\\%\\) cas). Ce phénomène s’appelle loi de Benford.\n\n\n1.2.1 Value-based methods\n\n\n1.2.2 Policy-based methods\n\n\n1.2.3 TBD\n\n\n1.2.4",
+    "text": "1.2 MDP\n\nDefinition 1.5 Un intervalle de confiance de niveau \\(1-\\alpha\\) est un intervalle \\(I = [A,B]\\) dont les bornes \\(A,B\\) sont des statistiques, et tel que pour tout \\(\\theta\\), \\[P_\\theta(\\theta \\in I) \\geqslant 1 - \\alpha.\\] Un intervalle de confiance de niveau asymptotique \\(1-\\alpha\\) est une suite d’intervalles \\(I_n = [A_n,B_n]\\) dont les bornes \\(A_n,B_n\\) sont des statistiques, et tels que pour tout \\(n\\), \\[ P_\\theta(\\theta \\in I_n) \\geqslant 1 - \\alpha.\\]\n\n\nTheorem 1.1 (Décomposition biais-variance) Le risque quadratique \\(\\mathbb{E}_{\\theta} [|\\hat{\\theta}-\\theta|^2]\\) est égal à \\[\n\\underbrace{\\operatorname{Var}_{\\theta} (\\hat{\\theta})}_{\\text{variance}} +\n\\underbrace{\\mathbb{E}_{\\theta}[\\hat{\\theta}-\\theta]^2}_{\\text{carré du biais}} \\, .\n\\]\n\n\nProof. En notant \\(x\\) l’espérance de \\(\\hat{\\theta}\\), on voit que le risque quadratique est égal à \\(\\mathbb{E}[|\\hat{\\theta} - x - (\\theta - x)|^2]\\). Le carré se développe en trois termes : le premier, \\(\\mathbb{E}[|\\hat{\\theta} - x|^2]\\), est la variance de \\(\\hat{\\theta}\\). Le second, \\(-2\\mathbb{E}[(\\hat{\\theta} - x)(\\theta - x)]\\), est égal à \\(-2(\\theta - x)\\mathbb{E}[\\hat{\\theta} - x]\\), c’est-à-dire 0. Le dernier, \\(\\mathbb{E}[(\\theta - x)^2]\\), est égal à \\((\\theta - x)^2\\), c’est-à-dire \\((\\theta - \\mathbb{E}[\\hat{\\theta}])^2\\) : c’est bien le carré du biais.\n\n\n\n\nÀ gauche, RQ élevé mais biais nul ; à droite, RQ faible mais biais non nul.\n\n\n\nExample 1.1 On peut se demander si, dans la langue courante, les 21 lettres de l’alphabet ont à peu près la même probabilité d’apparaître comme première lettre d’un mot. Cela revient à tester si , hypothèse qui est évidemment fausse, il suffit de regarder l’épaisseur des 26 sections du dictionnaire pour s’en rendre compte.\nQu’en est-il des 9 chiffres ? On peut vouloir tester si, dans n’importe quel document (journal, site internet, article scientifique), ces 9 chiffres apparaissent à peu près uniformément en tant que premier chiffre d’un nombre. Cela reviendrait à tester.\nCe n’est pas le cas et cette hypothèse est très fréquemment réfutée : le premier chiffre significatif d’un nombre est bien plus souvent 1 (\\(\\approx 30\\%\\) des cas) que \\(9\\) (\\(\\approx 5\\%\\) cas). Ce phénomène s’appelle loi de Benford.\n\n\n1.2.1 Value-based methods\n\n\n1.2.2 Policy-based methods\n\n\n1.2.3 TBD\n\n\n1.2.4",
     "crumbs": [
       "Part n°1  : Reinforcement Learning",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Reminders</span>"
     ]
   },
   {
-    "objectID": "contents/RL/Rappels.html#reinforcement-learning-in-continous-time",
-    "href": "contents/RL/Rappels.html#reinforcement-learning-in-continous-time",
+    "objectID": "contents/RL/RappelsRL.html#reinforcement-learning-in-continous-time",
+    "href": "contents/RL/RappelsRL.html#reinforcement-learning-in-continous-time",
     "title": "1  Course Reminders",
     "section": "1.3 Reinforcement Learning in Continous Time",
-    "text": "1.3 Reinforcement Learning in Continous Time\n\n1.3.1 Problem Formulation\n\n\n1.3.2 Policy gradient methods in continous time\n\n1.3.2.1 Policy Gradient Representation\nLet’s dive into policy gradient representation now.\n\n\n1.3.2.2 Actor critic algorithms\nLet’s dive into Actor critic algorithms\n\n\n\n1.3.3 Q-learning and approximations in continous time\n\n1.3.3.1 TBD\n\n\n1.3.3.2 TBD",
+    "text": "1.3 Reinforcement Learning in Continous Time\n\n1.3.1 Problem Formulation\n\n\n1.3.2 Policy gradient methods in continous time\nIn the policy gradient method, we will consider parametric family of randomized policies admitting a density writh respect to \\(\\nu\\) on A given by :\n\\[\n\\pi_{\\theta}(t,x,da) = p(t,x,a) \\nu(da)\n\\] Therefore, the perforamnce value function which is also called critic with entropy regularizer is given by :\n\\[\n\\begin{align}\nV^{\\pi_{\\theta}}(t,x) = \\mathbb{E}_{\\pi^{\\theta}} [ \\int_{t}^{T} f(X_s,\\alpha_s) - \\lambda log (\\pi_{\\theta})(s,X_s,\\alpha_s) + g(X_T) | X_t= x]\n\\] and \\[\nJ(\\theta) = \\mathbb{E}[V^{\\pi_{\\theta}}(0,X_0)]\n\\]\n\n1.3.2.1 Policy Gradient Representation\nLet’s dive into policy gradient representation now.\n\n\n1.3.2.2 Actor critic algorithms\nLet’s dive into Actor critic algorithms\n\n\n\n1.3.3 Q-learning and approximations in continous time\n\n1.3.3.1 TBD\n\n\n1.3.3.2 TBD",
     "crumbs": [
       "Part n°1  : Reinforcement Learning",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Reminders</span>"
     ]
   },
   {
-    "objectID": "contents/RL/Rappels.html#to-go-further",
-    "href": "contents/RL/Rappels.html#to-go-further",
+    "objectID": "contents/RL/RappelsRL.html#to-go-further",
+    "href": "contents/RL/RappelsRL.html#to-go-further",
     "title": "1  Course Reminders",
     "section": "1.4 To Go Further",
     "text": "1.4 To Go Further\nIf you are interested in such topics, you can have a look at the following papers as this is a current research topic.",
@@ -89,18 +89,40 @@
     "href": "contents/RL/TP1.html",
     "title": "2  Enoncé du TP n°1",
     "section": "",
-    "text": "$$\n\n\\newcommand{\\bx}{\\boldsymbol{x}}\n\n\\newcommand{\\bt}{\\boldsymbol{\\theta}}\n\n\\newcommand{\\dkl}{\\mathrm{d}_{\\mathrm{KL}}}\n\n\\newcommand{\\dtv}{\\mathrm{d}_{\\mathrm{TV}}}\n\n\\newcommand{\\emv}{\\hat{\\theta}_{\\mathrm{emv}}}\n\n\\newcommand{\\ent}{\\mathrm{Ent}}\n\n$$",
+    "text": "$$\n\n\\newcommand{\\bx}{\\boldsymbol{x}}\n\n\\newcommand{\\bt}{\\boldsymbol{\\theta}}\n\n\\newcommand{\\dkl}{\\mathrm{d}_{\\mathrm{KL}}}\n\n\\newcommand{\\dtv}{\\mathrm{d}_{\\mathrm{TV}}}\n\n\\newcommand{\\emv}{\\hat{\\theta}_{\\mathrm{emv}}}\n\n\\newcommand{\\ent}{\\mathrm{Ent}}\n\n$$\n\n\n\n\n\n\nDownload the TP n°2 here",
     "crumbs": [
       "Part n°1  : Reinforcement Learning",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Enoncé du TP n°1</span>"
     ]
   },
   {
-    "objectID": "contents/DeepPDE/DeepPDE.html",
-    "href": "contents/DeepPDE/DeepPDE.html",
+    "objectID": "contents/DeepPDE/RappelsDeepPDE.html",
+    "href": "contents/DeepPDE/RappelsDeepPDE.html",
     "title": "3  Course Reminders",
     "section": "",
-    "text": "$$\n\n\\newcommand{\\bx}{\\boldsymbol{x}}\n\n\\newcommand{\\bt}{\\boldsymbol{\\theta}}\n\n\\newcommand{\\dkl}{\\mathrm{d}_{\\mathrm{KL}}}\n\n\\newcommand{\\dtv}{\\mathrm{d}_{\\mathrm{TV}}}\n\n\\newcommand{\\emv}{\\hat{\\theta}_{\\mathrm{emv}}}\n\n\\newcommand{\\ent}{\\mathrm{Ent}}\n\n$$\n\n\n\n\n\n\n\n#  Import des Librairies\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n\n# Test\nprint(np.arange(5))\n\n\ndef f(x) :\n    return x**2\n\nL=[i for i in range(-5,6)]\n\nplt.scatter(L,[f(l) for l in L])\nplt.xlabel(\"Test\")\nplt.ylabel(\"Test2\")\nplt.title(\"Test Scatter Plot\")\nplt.grid()\n\n[0 1 2 3 4]\n\n\n\n\n\n\n\n\n\n\nDéfinition 3.1 A noter qu’il faut être à l’aise sur l’utilisation de Quarto",
+    "text": "3.1 Some reminders on PDEs and stochastic control",
+    "crumbs": [
+      "Part n°2 : DeepPDE",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Course Reminders</span>"
+    ]
+  },
+  {
+    "objectID": "contents/DeepPDE/RappelsDeepPDE.html#neural-network-algorithms",
+    "href": "contents/DeepPDE/RappelsDeepPDE.html#neural-network-algorithms",
+    "title": "3  Course Reminders",
+    "section": "3.2 Neural Network Algorithms",
+    "text": "3.2 Neural Network Algorithms\n\n3.2.1 Deep Galerkin Method\nThis method is based on the seminal papers : Insérer Références.\nInsérer Graphiques\n\n\n3.2.2 Deep BSDE\nInsérer Graphiques\n\n\n3.2.3 Deep BDP\nThis method is based on the seminal papers : Insérer Références",
+    "crumbs": [
+      "Part n°2 : DeepPDE",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Course Reminders</span>"
+    ]
+  },
+  {
+    "objectID": "contents/DeepPDE/RappelsDeepPDE.html#section",
+    "href": "contents/DeepPDE/RappelsDeepPDE.html#section",
+    "title": "3  Course Reminders",
+    "section": "3.3 ",
+    "text": "3.3 \n\n#  Import des Librairies\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\n# Test\nprint(np.arange(5))\n\n\ndef f(x) :\n    return x**2\n\nL=[i for i in range(-5,6)]\n\nplt.scatter(L,[f(l) for l in L])\nplt.xlabel(\"Test\")\nplt.ylabel(\"Test2\")\nplt.title(\"Test Scatter Plot\")\nplt.grid()\n\n# Exemple simple de DataFrame\ndata = {\n    'Nom': ['Alice', 'Bob', 'Charlie', 'David'],\n    'Âge': [24, 30, 18, 22],\n    'Ville': ['Paris', 'Lyon', 'Marseille', 'Toulouse'],\n    'Score': [85.5, 90.0, 78.0, 88.5]\n}\n\ndf = pd.DataFrame(data)\ndf\n\n[0 1 2 3 4]\n\n\n\n\n\n\n\n\n\nNom\nÂge\nVille\nScore\n\n\n\n\n0\nAlice\n24\nParis\n85.5\n\n\n1\nBob\n30\nLyon\n90.0\n\n\n2\nCharlie\n18\nMarseille\n78.0\n\n\n3\nDavid\n22\nToulouse\n88.5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDefinition 3.1 A noter qu’il faut être à l’aise sur l’utilisation de Quarto",
     "crumbs": [
       "Part n°2 : DeepPDE",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Course Reminders</span>"
@@ -118,8 +140,8 @@
     ]
   },
   {
-    "objectID": "contents/GenerativeIA/GenAI.html",
-    "href": "contents/GenerativeIA/GenAI.html",
+    "objectID": "contents/GenerativeIA/RappelsGenAI.html",
+    "href": "contents/GenerativeIA/RappelsGenAI.html",
     "title": "5  Course Reminders",
     "section": "",
     "text": "5.1 Rappels de cours",
@@ -129,19 +151,19 @@
     ]
   },
   {
-    "objectID": "contents/GenerativeIA/GenAI.html#rappels-de-cours",
-    "href": "contents/GenerativeIA/GenAI.html#rappels-de-cours",
+    "objectID": "contents/GenerativeIA/RappelsGenAI.html#rappels-de-cours",
+    "href": "contents/GenerativeIA/RappelsGenAI.html#rappels-de-cours",
     "title": "5  Course Reminders",
     "section": "",
-    "text": "Définition 5.1 (intervalle de confiance) Un intervalle de confiance de niveau \\(1-\\alpha\\) est un intervalle \\(I = [A,B]\\) dont les bornes \\(A,B\\) sont des statistiques, et tel que pour tout \\(\\theta\\), \\[P_\\theta(\\theta \\in I) \\geqslant 1 - \\alpha.\\] Un intervalle de confiance de niveau asymptotique \\(1-\\alpha\\) est une suite d’intervalles \\(I_n = [A_n,B_n]\\) dont les bornes \\(A_n,B_n\\) sont des statistiques, et tels que pour tout \\(n\\), \\[ P_\\theta(\\theta \\in I_n) \\geqslant 1 - \\alpha.\\]",
+    "text": "Definition 5.1 (intervalle de confiance) Un intervalle de confiance de niveau \\(1-\\alpha\\) est un intervalle \\(I = [A,B]\\) dont les bornes \\(A,B\\) sont des statistiques, et tel que pour tout \\(\\theta\\), \\[P_\\theta(\\theta \\in I) \\geqslant 1 - \\alpha.\\] Un intervalle de confiance de niveau asymptotique \\(1-\\alpha\\) est une suite d’intervalles \\(I_n = [A_n,B_n]\\) dont les bornes \\(A_n,B_n\\) sont des statistiques, et tels que pour tout \\(n\\), \\[ P_\\theta(\\theta \\in I_n) \\geqslant 1 - \\alpha.\\]",
     "crumbs": [
       "Part n°3 : Generative IA",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Course Reminders</span>"
     ]
   },
   {
-    "objectID": "contents/GenerativeIA/GenAI.html#implémentation-numérique",
-    "href": "contents/GenerativeIA/GenAI.html#implémentation-numérique",
+    "objectID": "contents/GenerativeIA/RappelsGenAI.html#implémentation-numérique",
+    "href": "contents/GenerativeIA/RappelsGenAI.html#implémentation-numérique",
     "title": "5  Course Reminders",
     "section": "5.2 Implémentation numérique",
     "text": "5.2 Implémentation numérique\n\\(\\bx\\)\n\n\n\nÀ gauche, RQ élevé mais biais nul ; à droite, RQ faible mais biais non nul.",
