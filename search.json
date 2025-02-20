@@ -129,36 +129,58 @@
     ]
   },
   {
+    "objectID": "contents/RL/TP2.html",
+    "href": "contents/RL/TP2.html",
+    "title": "4  Enoncé du TP n°2",
+    "section": "",
+    "text": "$$\n\n\\newcommand{\\bx}{\\boldsymbol{x}}\n\n\\newcommand{\\bt}{\\boldsymbol{\\theta}}\n\n\\newcommand{\\dkl}{\\mathrm{d}_{\\mathrm{KL}}}\n\n\\newcommand{\\dtv}{\\mathrm{d}_{\\mathrm{TV}}}\n\n\\newcommand{\\emv}{\\hat{\\theta}_{\\mathrm{emv}}}\n\n\\newcommand{\\ent}{\\mathrm{Ent}}\n\n$$\n\n\n\n\n\n\nThe TP will be available during the second session. You can download the TP n°2 by clicking here.\n\n4.0.1 Goals of the TP",
+    "crumbs": [
+      "Part n°2  : Reinforcement Learning",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Enoncé du TP n°2</span>"
+    ]
+  },
+  {
     "objectID": "contents/GenerativeIA/RappelsGenAI.html",
     "href": "contents/GenerativeIA/RappelsGenAI.html",
-    "title": "4  Course Reminders",
+    "title": "5  Course Reminders",
     "section": "",
-    "text": "4.1 Rappels de cours",
+    "text": "5.1 Rappels de cours",
     "crumbs": [
       "Part n°3 : Generative AI",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Course Reminders</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Course Reminders</span>"
     ]
   },
   {
     "objectID": "contents/GenerativeIA/RappelsGenAI.html#rappels-de-cours",
     "href": "contents/GenerativeIA/RappelsGenAI.html#rappels-de-cours",
-    "title": "4  Course Reminders",
+    "title": "5  Course Reminders",
     "section": "",
-    "text": "Definition 4.1 (intervalle de confiance) Un intervalle de confiance de niveau \\(1-\\alpha\\) est un intervalle \\(I = [A,B]\\) dont les bornes \\(A,B\\) sont des statistiques, et tel que pour tout \\(\\theta\\), \\[P_\\theta(\\theta \\in I) \\geqslant 1 - \\alpha.\\] Un intervalle de confiance de niveau asymptotique \\(1-\\alpha\\) est une suite d’intervalles \\(I_n = [A_n,B_n]\\) dont les bornes \\(A_n,B_n\\) sont des statistiques, et tels que pour tout \\(n\\), \\[ P_\\theta(\\theta \\in I_n) \\geqslant 1 - \\alpha.\\]",
+    "text": "Definition 5.1 (intervalle de confiance) Un intervalle de confiance de niveau \\(1-\\alpha\\) est un intervalle \\(I = [A,B]\\) dont les bornes \\(A,B\\) sont des statistiques, et tel que pour tout \\(\\theta\\), \\[P_\\theta(\\theta \\in I) \\geqslant 1 - \\alpha.\\] Un intervalle de confiance de niveau asymptotique \\(1-\\alpha\\) est une suite d’intervalles \\(I_n = [A_n,B_n]\\) dont les bornes \\(A_n,B_n\\) sont des statistiques, et tels que pour tout \\(n\\), \\[ P_\\theta(\\theta \\in I_n) \\geqslant 1 - \\alpha.\\]",
     "crumbs": [
       "Part n°3 : Generative AI",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Course Reminders</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Course Reminders</span>"
     ]
   },
   {
     "objectID": "contents/GenerativeIA/RappelsGenAI.html#implémentation-numérique",
     "href": "contents/GenerativeIA/RappelsGenAI.html#implémentation-numérique",
-    "title": "4  Course Reminders",
-    "section": "4.2 Implémentation numérique",
-    "text": "4.2 Implémentation numérique\n\\(\\bx\\)\n\n\n\nÀ gauche, RQ élevé mais biais nul ; à droite, RQ faible mais biais non nul.",
+    "title": "5  Course Reminders",
+    "section": "5.2 Implémentation numérique",
+    "text": "5.2 Implémentation numérique\n\\(\\bx\\)\n\n\n\nÀ gauche, RQ élevé mais biais nul ; à droite, RQ faible mais biais non nul.",
     "crumbs": [
       "Part n°3 : Generative AI",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Course Reminders</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Course Reminders</span>"
+    ]
+  },
+  {
+    "objectID": "contents/GenerativeIA/TP3.html",
+    "href": "contents/GenerativeIA/TP3.html",
+    "title": "6  Enoncé du TP n°3",
+    "section": "",
+    "text": "$$\n\n\\newcommand{\\bx}{\\boldsymbol{x}}\n\n\\newcommand{\\bt}{\\boldsymbol{\\theta}}\n\n\\newcommand{\\dkl}{\\mathrm{d}_{\\mathrm{KL}}}\n\n\\newcommand{\\dtv}{\\mathrm{d}_{\\mathrm{TV}}}\n\n\\newcommand{\\emv}{\\hat{\\theta}_{\\mathrm{emv}}}\n\n\\newcommand{\\ent}{\\mathrm{Ent}}\n\n$$",
+    "crumbs": [
+      "Part n°3 : Generative AI",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Enoncé du TP n°3</span>"
     ]
   },
   {
