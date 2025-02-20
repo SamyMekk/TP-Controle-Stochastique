@@ -1,9 +1,9 @@
 # Enoncé du TP n°2
 
-You can download the TP n°2 by clicking [here](TP2-RL/TP%20n%C2%B02-%20RL%20in%20Continuous%20Time.ipynb).
+The TP will be available during the second session.  You can download the TP n°2 by clicking [here](TP2-RL/TP%20n%C2%B02-%20RL%20in%20Continuous%20Time.ipynb).
 
 
-### 
+### Goals of the TP
 
 
 
